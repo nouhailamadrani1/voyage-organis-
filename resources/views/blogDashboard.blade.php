@@ -32,17 +32,17 @@
                     <td><img  src="images/{{ ($article->image) }}" class="" alt="" style="width: 50px ; hight: 50px"></td>
                   
                       <td class="d-flex">
-                        <form class="" action="{{ route('blogDashboard.destroy', $hotel->id)}}" method="post">
+                        <form class="" action="{{ route('blogDashboard.destroy', $article->id)}}" method="post">
                          @csrf
                          @method('DELETE')
                          <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/f11010/delete-forever.png"/></button>
                      </form>
-                     <form class="" action="{{ route('blogDashboard.destroy', $hotel->id)}}" method="post">
+                     <form class="" action="{{ route('blogDashboard.destroy', $article->id)}}" method="post">
                        @csrf
                        @method('DELETE')
                        <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/41ef1f/vision.png"/></button>
                    </form>
-                   <form class="" action="{{ route('blogDashboard.destroy', $hotel->id)}}" method="post">
+                   <form class="" action="{{ route('blogDashboard.destroy', $article->id)}}" method="post">
                      @csrf
                      @method('DELETE')
                      <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/007bff/edit-row.png"/></button>
