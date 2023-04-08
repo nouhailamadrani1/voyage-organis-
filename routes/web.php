@@ -9,6 +9,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TransportController;
 use App\Http\Controllers\ArticleAdminController;
+use App\Http\Controllers\StatistiquesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +56,6 @@ Route::resource('hotel', HotelController::class);
 
 Route::resource('transports', TransportController::class);
 Route::resource('blogDashboard', ArticleAdminController::class);
+
+Route::get('/noha',[StatistiquesController::class ,'count']);
+// Route::get('/noha',[StatistiquesController::class ,'countHotel']);
