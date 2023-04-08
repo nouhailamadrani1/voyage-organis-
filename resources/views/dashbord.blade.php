@@ -70,28 +70,21 @@
         </tr>
       </thead>
       <tbody class="table-group-divider " >
+        
+        @foreach ($hotels as $hotel)
+            
+       
         <tr>
-          <th scope="row">1</th>
-          <td>Casablanca</td>
-          <td>Nouhaila</td>
-          <td>Nouhaila</td>
-          <td><img src="img/Casablanc.jpg" class="" alt="" style="width: 50px ; hight: 50px"></td>
+          <th scope="row">{{$hotel->id}}</th>
+          <td>{{$hotel->nom}}</td>
+          <td>{{$hotel->ville}}</td>
+          <td>{{$hotel->nbre_etoiles}}</td>
+         
+          <td><img src="images/{{$hotel->image}}" class="" alt="" style="width: 50px ; hight: 50px"></td>
 
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Casablanca</td>
-          <td>Nouhaila</td>
-          <td>Nouhaila</td>
-          <td><img src="img/Casablanc.jpg" class="" alt="" style="width: 50px ; hight: 50px"></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Casablanca</td>
-          <td>Nouhaila</td>
-          <td>Nouhaila</td>
-          <td><img src="img/Casablanc.jpg" class="" alt="" style="width: 50px ; hight: 50px"></td>
-        </tr>
+        @endforeach
+       
       </tbody>
     </table>
   </div>
