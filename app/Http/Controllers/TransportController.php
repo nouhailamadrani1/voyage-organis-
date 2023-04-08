@@ -33,16 +33,17 @@ class TransportController extends Controller
             'image'=>'required'
         ]);
 
-        $Transport = new Transport();
+        $transport = new Transport();
+        $transport->fill($validatedData);
         if ($image = $request->file('image')) {
             $destinationPath = 'images/';
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $postImage);
-            $Transport['image'] = "$postImage";
+            $transport['image'] = "$postImage";
 
         }
-        $Transport->fill($validatedData);
-        $Transport->save();
+
+        $transport->save();
 
         return redirect()->route('transports.index');
     }

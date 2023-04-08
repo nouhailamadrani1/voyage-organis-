@@ -30,8 +30,10 @@
                     <th scope="row">{{ $transport->id }}</th>
                     <td>{{ $transport->nom }}</td>
                     <td>{{ $transport->depuis }}</td>
+                    <td>{{ $transport->pour }}</td>
                     <td>{{ $transport->nombre_passagers }}</td>
-                    <td><img  src="images/{{ ($transport->image) }}" class="" alt="" style="width: 50px ; hight: 50px"></td>
+                   
+                    <td><img src="images/{{ ($transport->image) }}" class="" alt="" style="width: 50px ; hight: 50px"></td>
                     <td>  <form class="" action="{{ route('transports.destroy', $transport->id)}}" method="post">
                       @csrf
                       @method('DELETE')

@@ -63,19 +63,28 @@
           <img src="https://img.icons8.com/ios-filled/32/0000/squared-menu.png" class="p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"/>
      
         
-        <div class="offcanvas offcanvas-start col-3 " data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas offcanvas-start " data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="staticBackdropLabel"  style="color:rgb(13, 111, 229);">Menu</h5>
-            <img src="https://img.icons8.com/ios-filled/30/228BE6/delete-sign--v1.png"  type="button" class="" data-bs-dismiss="offcanvas" aria-label="Close"/>
-          </div>
+        
+              <img src="img/profile.jpeg"  id="staticBackdropLabel"  class=" rounded-circle offcanvas-title px-2  fst-italic"  alt="" style="width: 70px ; hight: 70px">
+              <div> <h6 class="fst-italic">Nouhaila Madrani</h6>
+               
+                <div><a href="# " class="fs-6 mx-1">Lougout</a> <a class="fs-6" href="#">Profile</a></div>
+                
+              </div>
+         
+            <img src="https://img.icons8.com/ios-filled/30/228BE6/delete-sign--v1.png"  type="button" class="" data-bs-dismiss="offcanvas" aria-label="Close"/></div>
+            
+           
+         
           <div class="offcanvas-body">
             <ul class="list-group list-group-flush">
-              <li class=" m-2 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/residence.png"/><a href="{{route('hotel.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Hotel</a></li>
-              <li class=" m-2 list-group-item "><img src="https://img.icons8.com/ios-filled/20/228BE6/car.png"/><a  href="{{route('transports.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Tronsport</a></li>
-              <li class=" m-2 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/medium-logo.png"/><a href="{{route('blogDashboard.index')}}"  class=" mx-2 text-decoration-none text-black fs-6">Blog</a></li>
-              <li class=" m-2 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Voyage Organisé</a></li>
-              <li class=" m-2 list-group-item"><img src="https://img.icons8.com/dotty/20/228BE6/client-management.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Clients</a></li>
-              <li class=" m-2 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/user.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Profile</a></li>
+              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/residence.png"/><a href="{{route('hotel.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Hotel</a></li>
+              <li class=" m-1 list-group-item "><img src="https://img.icons8.com/ios-filled/20/228BE6/car.png"/><a  href="{{route('transports.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Tronsport</a></li>
+              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/medium-logo.png"/><a href="{{route('blogDashboard.index')}}"  class=" mx-2 text-decoration-none text-black fs-6">Blog</a></li>
+              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Voyage Organisé</a></li>
+              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/dotty/20/228BE6/client-management.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Clients</a></li>
+              
 
 
           </ul>
