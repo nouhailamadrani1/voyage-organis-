@@ -93,6 +93,7 @@
     <h4 class="my-1 d-flex justify-content-center p-3"> Publications</h4>
     <table class="table bg-primary bg-opacity-10">
       <thead>
+        
         <tr >
           <th scope="col">#</th>
           <th scope="col">titre</th>
@@ -101,24 +102,17 @@
         </tr>
       </thead>
       <tbody class="table-group-divider " >
+        @foreach ($articles as $article)
+            
         <tr>
-          <th scope="row">1</th>
-          <td>Casablanca</td>
-          <td>Nouhaila</td>
-          <td><img src="img/Casablanc.jpg" class="" alt="" style="width: 50px ; hight: 50px"></td>
+          <th scope="row">{{$article->id}}</th>
+          <td>{{$article->title}}</td>
+          <td>{{$article->user->name}}</td>
+          <td><img src="images/{{$article->image}}" class="" alt="" style="width: 50px ; hight: 50px"></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Casablanca</td>
-          <td>Nouhaila</td>
-          <td><img src="img/Casablanc.jpg" class="" alt="" style="width: 50px ; hight: 50px"></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Casablanca</td>
-          <td>Nouhaila</td>
-          <td><img src="img/Casablanc.jpg" class="" alt="" style="width: 50px ; hight: 50px"></td>
-        </tr>
+        @endforeach
+
+        
       </tbody>
     </table>
   </div>
@@ -137,22 +131,19 @@
         </tr>
       </thead>
       <tbody class="table-group-divider " >
+        @foreach ($transports as $transport)
+            
+    
         <tr>
-          <th scope="row">1</th>
-          <td>CTM</td>
-          <td>marrakech</td>
-          <td>casablanca</td>
-          <td>40</td>
-          <td><img src="img/ctm.png" class="" alt="" style="width: 50px ; hight: 50px"></td>
+          <th scope="row">{{$transport->id}}</th>
+          <td>{{$transport->nom}}</td>
+          <td>{{$transport->depuis}}</td>
+          <td>{{$transport->pour}}</td>
+          <td>{{$transport->nombre_passagers}}</td>
+          <td><img src="images/{{$transport->image}}" class="" alt="" style="width: 50px ; hight: 50px"></td>
         </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>ONCF</td>
-          <td>marrakech</td>
-          <td>casablanca</td>
-          <td>40</td>
-          <td><img src="img/ONCF.png" class="" alt="" style="width: 50px ; hight: 50px"></td>
-        </tr>
+        @endforeach
+        
        
       
       </tbody>

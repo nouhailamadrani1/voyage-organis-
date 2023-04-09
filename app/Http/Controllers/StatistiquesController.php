@@ -17,9 +17,11 @@ class StatistiquesController extends Controller
         $countBlog = Article::count();
         $users = User::all();
         $hotels= Hotel::all();
+        $articles= Article::all();
+        $transports= Transport::all();
 
 
-        return view('dashbord')->with(compact('countUser','countHotel','countTransport','countBlog','users','hotels'));
+        return view('dashbord')->with(compact('countUser','countHotel','countTransport','countBlog','users','hotels','articles','transports'));
     }
 
     
