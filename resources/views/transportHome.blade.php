@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="m-0 p-0">
-    <img src="img/cover2.jpeg" class="img-fluid shadow" alt="..." style="width: auto"> 
+    <img src="img/covertronsport.jpg" class="img-fluid shadow" alt="..." style="width: auto"> 
 
     <div class="col-sm-12  d-flex  justify-content-center flex-warp px-3" style="margin-block-start: -16%">
         <div>
@@ -24,23 +24,23 @@
             </p>
         </div>
     </div>
-    <h4 class="pt-4 my-5 text-center ">Les Hôtels
+    <h4 class="pt-4 my-5 text-center ">Transport Touristique
     </h4>
     <p class="px-3 mt-2 text-center">Notre site vous permet de trouver facilement et rapidement les meilleurs hôtels pour votre prochain voyage. Nous avons rassemblé une liste complète d'hôtels de qualité dans différentes destinations, pour répondre à tous les goûts et à tous les budgets!</p>
 
   
    <section class="d-flex justify-content-center flex-wrap p-2"> 
-    <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
+    <div class="card m-1 shadow-lg" style="width: 18rem;">
+        <img src="img/mercedes.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
+          <h5 class="card-title"><b>mercedes</b></h5>
       
           <p class="fw-light"><b>Desciption:</b> Cet hôtel est situé dans le centre de Casablanca, à 400 mètres de la gare de Casa Boreu, et surplombe l'Oukniversaire d'Ortsère.</p>
           <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded d-flex justify-content-center">Choisissez votre chambre</a>
         </div>
       </div>
-      <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
+      <div class="card m-1 shadow-lg" style="width: 18rem;">
+        <img src="img/mercedes.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
       
@@ -48,8 +48,8 @@
           <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded  d-flex justify-content-center">Choisissez votre chambre</a>
         </div>
       </div>
-      <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
+      <div class="card m-1 shadow-lg" style="width: 18rem;">
+        <img src="img/mercedes.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
       
@@ -57,8 +57,8 @@
           <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded  d-flex justify-content-center">Choisissez votre chambre</a>
         </div>
       </div>
-      <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
+      <div class="card m-1  shadow-lg" style="width: 18rem;">
+        <img src="img/mercedes.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
       

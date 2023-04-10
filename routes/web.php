@@ -42,6 +42,10 @@ Route::get('/dashboard', function () {
 Route::get('/hotelHome', function () {
     return view('hotelHome');
 });
+
+Route::get('/transportHome', function () {
+    return view('transportHome');
+});
 Route::get('/clients', function () {
     return view('clients');
 });

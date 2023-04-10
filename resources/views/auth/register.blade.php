@@ -75,7 +75,7 @@
                             <label for="" class=" my-1 ">{{ __('image') }}</label>
 
                             <div class="">
-                                <input id="" type="file" class=" my-2 form-control" name="image">
+                                <input id="" type="file" class=" my-2 form-control" name="image" >
                             </div>
 
 
