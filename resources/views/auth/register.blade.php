@@ -18,7 +18,7 @@
 
                 <div class="">
                     <h4 class="pe-4 " style="color:rgb(13, 111, 229) ;">{{ __('Register') }}</h4>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="">
@@ -70,7 +70,20 @@
                                 <input id="password-confirm" type="password" class=" my-2 form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        
+                        <div class="">
+                            <label for="" class=" my-1 ">{{ __('image') }}</label>
 
+                            <div class="">
+                                <input id="" type="file" class=" my-2 form-control" name="image">
+                            </div>
+
+
+                        </div>
+
+                        @if($errors->any())
+                            {{ implode('', $errors->all('<div>:message</div>')) }}
+                        @endif
                         <div class="">
                             <div class="">
                                 <button type="submit" class=" my-1 btn text-white " style="background:rgb(13, 111, 229) ;">

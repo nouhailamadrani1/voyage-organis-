@@ -39,9 +39,9 @@ Route::get('/dashboard', function () {
 // Route::get('/tronsport', function () {
 //     return view('tronsport');
 // });
-// Route::get('/blogDashboard', function () {
-//     return view('blogDashboard');
-// });
+Route::get('/hotelHome', function () {
+    return view('hotelHome');
+});
 Route::get('/clients', function () {
     return view('clients');
 });

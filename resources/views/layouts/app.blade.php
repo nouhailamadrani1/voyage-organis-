@@ -69,8 +69,11 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle fst-italic" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:rgb(13, 111, 229);"><img src="https://img.icons8.com/ios-filled/20/228BE6/user.png"/>
+                               
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fst-italic" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:rgb(13, 111, 229);">
+                                    <img src="images/{{Auth::user()->image}} " class="m-3" alt="" style="width: 50px ; hight: 50px">
                                     {{ Auth::user()->name }}
+
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
