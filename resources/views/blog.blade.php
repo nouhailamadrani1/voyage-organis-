@@ -80,12 +80,12 @@
                     <h6 class="m-1 p-1">Les Commentaire</h6>
                     @foreach ($article->comments as $comment)
                     <div class="   px-2 m-2 p-2 border border-2 border-primary  rounded ">
-                        <div class="col-12"> <img src="img/profile.jpeg" class="rounded" alt="" style="width: 25px ; hight: 25px"><span class="fst-italic"><b>{{ $comment->user->name }}</b></span><span>
+                        <div class="col-12"> <img src="images/{{ $comment->user->image }}" class="rounded-circle px-1 " alt="" style="width: 30px ; hight: 30px"><span class="fst-italic"><b>{{ $comment->user->name }}</b></span><span>
                                 <p>{{ $comment->description }}</p>
                             </span></div>
 
 
-                        <form class="d-flex justify-content-end align-items-center px-4" action="{{ route('comments.destroy', $comment->id)}}" method="post">
+                        <form class="d-flex justify-content-end align-items-center px-5 " action="{{ route('comments.destroy', $comment->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class=" btn btn-white border-bottom border-0 border-primary border-3" type="submit">Supprimer</button>

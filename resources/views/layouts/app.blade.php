@@ -76,7 +76,7 @@
 
                                 </a>
 
-                                {{-- <div class="dropdown-menu dropdown-menu-end  text-dark " aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-end  text-dark " aria-labelledby="navbarDropdown">
                                     <a class="text-decoration-none px-3 text-dark " href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><img src="https://img.icons8.com/ios-filled/20/0000/logout-rounded-left.png"/>
@@ -86,7 +86,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div> --}}
+                                </div>
                             </li>
                         @endguest
                     </ul>

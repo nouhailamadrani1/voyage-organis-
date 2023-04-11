@@ -26,7 +26,8 @@
     </div>
     <h4 class="pt-4 my-5 text-center ">Transport Touristique
     </h4>
-    <p class="px-3 mt-2 text-center">Notre site vous permet de trouver facilement et rapidement les meilleurs hôtels pour votre prochain voyage. Nous avons rassemblé une liste complète d'hôtels de qualité dans différentes destinations, pour répondre à tous les goûts et à tous les budgets!</p>
+    <p class="px-3 mt-2 text-center">Pour votre confort et votre sécurité, nos véhicules sont équipés des dernières technologies et bénéficient de révisions et d'entretiens réguliers dans le respect de la législation en vigueur et des normes environnementales.
+      Choisissez parmi notre large gamme, le véhicule le mieux adapté à vos besoins et à votre budget</p>
 
   
    <section class="d-flex justify-content-center flex-wrap p-2"> 
@@ -39,10 +40,14 @@
         <div class="card-body">
           <h5 class="card-title"><b>{{ $transport->nom }}</b></h5>
       
-          <p class="fw-light"><b>nombre_passagers:</b> {{ $transport->nombre_passagers }}</p>
-          <p class="fw-light"><b>De puis:</b> {{ $transport->depuis }}</p>
-          <p class="fw-light"><b>Pour</b> {{ $transport->pour }}</p>
-          <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded d-flex justify-content-center">réservez votre place</a>
+          <p class="fw-light my-0"><b>Nombre passagers:</b> {{ $transport->nombre_passagers }}</p>
+          <p class="fw-light my-0"><b>De puis:</b> {{ $transport->depuis }}</p>
+          <p class="fw-light my-0"><b>Pour :</b> {{ $transport->pour }}</p>
+          <p class="fw-light my-0"><b>Heure départ :</b> {{ $transport->heure_de_départ }}</p>
+          <p class="fw-light my-0"><b>Heure arrivee :</b> {{ $transport->heure_arrivee }}</p>
+          <p class="fw-light my-0"><b>Date départ :</b> {{ $transport->date_de_départ }}</p>
+          <p class="fw-light my-0"><b>Date arrivee :</b> {{ $transport->date_arrivee }}</p>
+          <a href="#" class="btn btn-warning shadow-lg  my-2 rounded d-flex justify-content-center">réservez votre place</a>
         </div>
       </div>
       @endforeach
