@@ -23,6 +23,10 @@ return new class extends Migration
             $table->foreign('hotel_id')
             ->references('id')->on('hotels')
             ->onDelete('cascade');
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('image4')->nullable();
             $table->timestamps();
         });
     }

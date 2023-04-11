@@ -34,7 +34,7 @@
             @foreach ($articles as $article)
             <div class="  shadow col-sm-5  my-2 mx-1">
                 <div class="d-flex justify-content-between align-items-center px-4 pt-4 mb-3 ">
-                    <div><img src="img/profile.jpeg" class="rounded" alt="" style="width: 30px ; hight: 25px"><span class="px-2  fst-italic"><b>{{ $article->user->name }} </b></span></div>
+                    <div><img src="images/{{ $article->user ->image }}" class="rounded-circle" alt="" style="width: 30px ; hight: 25px"><span class="px-2  fst-italic"><b>{{ $article->user->name }} </b></span></div>
                     <p class="d-flex justify-content-end align-items-center px-4" style="color:rgb(13, 111, 229);">
                         {{ $article->created_at }}
                     </p>
@@ -104,7 +104,7 @@
             <div>
                 <div class="W-100 p-4 my-4" style="background:rgb(255, 213, 10)">
 
-                    <div class="d-flex justify-content-start align-items-center p-3  "><img src="img/profile.jpeg" class="rounded" alt="" style="width: 25px ; hight: 25px">
+                    <div class="d-flex justify-content-start align-items-center p-3  "><img src="images/{{ Auth::user()->image }}" class="rounded-circle" alt="" style="width: 25px ; hight: 25px">
                         <h6 class="px-2  fst-italic">{{ Auth::user()->name }}</h6>
                     </div>
                     @if ($errors->any())

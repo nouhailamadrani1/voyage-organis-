@@ -63,3 +63,5 @@ Route::resource('blogDashboard', ArticleAdminController::class);
 
 Route::get('/noha',[StatistiquesController::class ,'count']);
 // Route::get('/noha',[StatistiquesController::class ,'countHotel']);
+Route::get('/hotels',[HotelController::class ,'indexClient'])->name('hotels');
+Route::get('/transportClient',[TransportController::class ,'indexClient'])->name('transportClient');

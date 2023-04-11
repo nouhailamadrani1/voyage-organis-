@@ -30,43 +30,21 @@
 
   
    <section class="d-flex justify-content-center flex-wrap p-2"> 
+   @foreach ($hotels as $hotel)
+       
+   
     <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
+        <img src="images/{{ ($hotel->image) }}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
+          <h5 class="card-title"><b>{{ $hotel->nom }}</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> ({{ $hotel->nbre_etoiles }})</span> </h5>
       
-          <p class="fw-light"><b>Desciption:</b> Cet hôtel est situé dans le centre de Casablanca, à 400 mètres de la gare de Casa Boreu, et surplombe l'Oukniversaire d'Ortsère.</p>
+          <p class="fw-light"><b>Desciption:</b>images/{{ ($hotel->description) }}</p>
           <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded d-flex justify-content-center">Choisissez votre chambre</a>
         </div>
       </div>
-      <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
+    
       
-          <p class="fw-light"><b>Desciption:</b> Cet hôtel est situé dans le centre de Casablanca, à 400 mètres de la gare de Casa Boreu, et surplombe l'Oukniversaire d'Ortsère.</p>
-          <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded  d-flex justify-content-center">Choisissez votre chambre</a>
-        </div>
-      </div>
-      <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
-      
-          <p class="fw-light"><b>Desciption:</b> Cet hôtel est situé dans le centre de Casablanca, à 400 mètres de la gare de Casa Boreu, et surplombe l'Oukniversaire d'Ortsère.</p>
-          <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded  d-flex justify-content-center">Choisissez votre chambre</a>
-        </div>
-      </div>
-      <div class="card shadow-lg" style="width: 18rem;">
-        <img src="img/novo1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><b>Novotel</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> (4)</span> </h5>
-      
-          <p class="fw-light"><b>Desciption:</b> Cet hôtel est situé dans le centre de Casablanca, à 400 mètres de la gare de Casa Boreu, et surplombe l'Oukniversaire d'Ortsère.</p>
-          <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded  d-flex justify-content-center ">Choisissez votre chambre</a>
-        </div>
-      </div>
-     
+      @endforeach
    </section>
  
 

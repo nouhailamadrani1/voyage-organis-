@@ -40,10 +40,10 @@
                                 <a class="nav-link px-3 py-1 mx-3 text-dark" href="{{route('articles.index')}}"><b>Blog</b></a>
                               </li>
                               <li class="">
-                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="#"><b>Hotel</b></a>
+                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="{{route('hotels')}}"><b>Hotel</b></a>
                               </li>
                               <li class="">
-                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="#"><b>Tronsport</b></a>
+                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="{{route('transportClient')}}"><b>Tronsport</b></a>
                               </li>
                               <li class="">
                                 <a class="nav-link px-3 py-1 mx-3 text-dark" href="#"><b>Voyage Organisés</b></a>

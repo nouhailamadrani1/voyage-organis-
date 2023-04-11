@@ -91,4 +91,9 @@ class TransportController extends Controller
         $Transport->delete();
         return redirect()->route('transports.index');
     }
+    public function indexClient()
+    {
+        $transports = Transport::all();
+        return view('transportHome', compact('transports'));
+    }
 }

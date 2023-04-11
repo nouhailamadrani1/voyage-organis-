@@ -83,4 +83,9 @@ class HotelController extends Controller
         $hotel->delete();
         return redirect()->route('hotel.index');
     }
+    public function indexClient()
+    {
+        $hotels = Hotel::all();
+        return view('hotelHome', compact('hotels'));
+    }
 }

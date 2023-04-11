@@ -190,7 +190,7 @@
     
 
   <div class=" d-flex justify-content-start align-items-center  px-2">
-    <img src="images/{{$user ->image}}" class="rounded" alt="" style="width: 25px ; hight: 25px">
+    <img src="images/{{$user ->image}}" class="rounded-circle" alt="" style="width: 25px ; hight: 25px">
     <h6 class="px-2  fst-italic">{{$user ->name}}</h6>
   </div>
     <hr class=" border border-primary border-1">
