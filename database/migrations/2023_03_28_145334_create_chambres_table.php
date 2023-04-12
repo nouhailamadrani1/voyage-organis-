@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('numero');
             $table->integer('prix');
             $table->boolean('réserve');
+            $table->string('type');
             $table->integer('nbre_lits');
             $table->unsignedBigInteger('hotel_id');
             $table->foreign('hotel_id')

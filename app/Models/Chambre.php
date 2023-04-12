@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Chambre extends Model
 {
     use HasFactory;
-
+   
     protected $fillable = [
         'numero',
         'image1',
@@ -21,6 +21,7 @@ class Chambre extends Model
         'description',
         'réserve',
         'hotel_id',
+        'type',
     ];
 
     public function hotel()

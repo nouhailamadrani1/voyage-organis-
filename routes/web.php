@@ -36,8 +36,8 @@ Route::get('/dashboard', function () {
 // Route::get('/hotel', function () {
 //     return view('hotel');
 // });
-Route::get('/voyage', function () {
-    return view('voyage');
+Route::get('/chambre', function () {
+    return view('chambre');
 });
 Route::get('/hotelHome', function () {
     return view('hotelHome');
