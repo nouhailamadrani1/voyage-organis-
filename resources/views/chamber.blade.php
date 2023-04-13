@@ -43,6 +43,7 @@
                         <form class="" action="{{ route('chambers.destroy',$chamber->id)}}" method="post">
                           @csrf
                           @method('DELETE')
+                          <input type="hidden" value="{{ $chamber->id}}" name="id">
                           <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/f11010/delete-forever.png"/></button>
                       </form>
                      <form class="" action="" method="post">

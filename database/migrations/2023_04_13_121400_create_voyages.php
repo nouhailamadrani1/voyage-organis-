@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('pays');
             $table->integer('nombre_place');
             $table->text('description');
-            $table->float('prix', 8, 2);
+            $table->float('prix', 8, 2)->nullable();
             $table->string('depuis');
             $table->string('pour');
             $table->date('date_de_départ');

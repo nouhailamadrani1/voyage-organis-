@@ -119,19 +119,25 @@
                         <input type="time" class="form-control border border-success border-2 rounded-4 shadow" name="heure_arrivee">
                       </div>
                    </div>
-                  <select class="form-select mb-3 mx-1 border border-warning border-2 rounded-4 shadow" name="hotel_id">
-                    <option selected>Hotel</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                   <div class="mb-3">
+                   <select id="hotel-list" class="form-select border border-warning border-2 rounded-4 shadow" name="hotel_id">
+                    @foreach ($hotels as $hotel)
+                        
+                   
+                    <option value="{{ $hotel->id }}">{{ $hotel->nom }}</option>
+                    @endforeach
                   </select>
-                  <select class="form-select mb-3 mx-1 border border-warning border-2 rounded-4 shadow" name="tronsport">
-                    <option selected>Tronsport</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                   </div>
+                   <div class="mb-3">
+                  <select class="form-select mb-3 mx-1 border border-warning border-2 rounded-4 shadow" name="transport_id">
+                    @foreach ($transports as $transport)
+                        
+                   
+                    <option value="{{ $transport->id }}">{{ $transport->nom }}passagers : ({{ $transport->nombre_passagers }})</option>
+                    @endforeach
                   </select>
-                  <select class="form-select mb-3 mx-1 border border-warning border-2 rounded-4 shadow" name="place">
+                   </div>
+                  <select class="form-select mb-3 mx-1 border border-warning border-2 rounded-4 shadow" name="nombre_place">
                     
                     <option value="4">4 place</option>
                     <option value="16">16 places</option>
@@ -139,12 +145,15 @@
                     <option value="26">26 places</option>
                     <option value="30">30 places</option>
                   </select>
-                  
+                    <div class="mb-3 m-2">
+                <label for="exampleFormControlInput1" class="form-label fw-semibold">Image</label>
+                <input type="file" class="form-control border border-success border-2 rounded-4 shadow" name="image">
+              </div>
                  
-                  <div class="mb-3 mx-1">
+                 <div class="mb-3 mx-1">
                     <label for="exampleFormControlInput1" class="form-label fw-semibold">Description</label>
                     <textarea type="text" class="form-control border border-warning border-2 rounded-4 shadow" name="description"></textarea>
-                  </div>
+                  </div> 
               
         
               <div class="mb-3  d-flex justify-content-center">

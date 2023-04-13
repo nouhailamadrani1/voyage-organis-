@@ -25,7 +25,7 @@ class VoyageController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'titre' => 'required|max:255',
+            'titre' => 'required',
             'image' => 'nullable|image|max:2048',
             'pays' => 'required|max:255',
             'nombre_place' => 'required|integer',
@@ -39,6 +39,7 @@ class VoyageController extends Controller
             'hotel_id' => 'required|exists:hotels,id',
             'transport_id' => 'required|exists:transports,id',
         ]);
+      
 
         $voyage = new Voyage();
         $voyage->fill($validatedData);

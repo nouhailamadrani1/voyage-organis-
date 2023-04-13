@@ -11,7 +11,7 @@
     use App\Http\Controllers\TransportController;
     use App\Http\Controllers\ArticleAdminController;
     use App\Http\Controllers\StatistiquesController;
-    use App\Http\Controllers\VoyageOrganiseController;
+    use App\Http\Controllers\VoyageController;
 
     /*
     |--------------------------------------------------------------------------
@@ -67,4 +67,4 @@
    
     Route::get('/hotels',[HotelController::class ,'indexClient'])->name('hotels');
     Route::get('/transportClient',[TransportController::class ,'indexClient'])->name('transportClient');
-    Route::resource('voyageDashboard', VoyageOrganiseController::class);
+    Route::resource('voyageDashboard', VoyageController::class);

@@ -23,6 +23,7 @@ class Voyage extends Model
          'pays',
          'hotel_id',
          'transport_id',
+         'description',
      
   ];
   public function hotel()
