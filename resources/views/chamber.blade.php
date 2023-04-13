@@ -19,28 +19,32 @@
                     <th scope="col">Numero</th>
                     <th scope="col">Hotel</th>
                     <th scope="col">reserve</th>
-                    <th scope="col">Image</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Action</th>
                    
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($chambers as $chamber)
                   <tr>
-                   
-                    <th scope="row"></th>
-                    <td></td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td><img  src="images/" class="" alt="" style="width: 50px ; hight: 50px"></td>
+                 
+                     
+              
+                    <th scope="row">{{$chamber->id}}</th>
+                    <td>{{$chamber->numero}}</td>
+                    <td> {{$chamber->hotel->nom}}</td>
+                    <td>{{$chamber->réserve}} </td>
+                    <td> {{$chamber->type}}</td>
+                    <td><img  src="images/{{$chamber->image1}}" class="" alt="" style="width: 50px ; hight: 50px"></td>
                   
 
                       <td class="d-flex">
-                        <form class="" action="" method="post">
-                     
-                         <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/f11010/delete-forever.png"/></button>
-                     </form>
+                        <form class="" action="{{ route('chambers.destroy',$chamber->id)}}" method="post">
+                          @csrf
+                          @method('DELETE')
+                          <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/f11010/delete-forever.png"/></button>
+                      </form>
                      <form class="" action="" method="post">
                      
                        <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/41ef1f/vision.png"/></button>
@@ -50,10 +54,11 @@
                    
                      <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/007bff/edit-row.png"/></button>
                  </form>
+              
                       </td>       
-                    
+                 
                   </tr>
-           
+                  @endforeach
                 </tbody>
               </table>
         </div>
@@ -67,7 +72,7 @@
             </ul>
         </div><br />
         @endif
-        <form  method="POST" action="" enctype="multipart/form-data">
+        <form  method="POST" action="{{ route('chambers.store') }}" enctype="multipart/form-data">
           @csrf
         <div  class="  p-1 bg-danger m-3 bg-opacity-10 p-2  border border-danger border-2 rounded-4 shadow" >
             <h6 class="d-flex justify-content-center m-2 mb-3 fw-semibold text-danger ">Ajouter une chambre</h6>
@@ -76,17 +81,33 @@
                 <label for="hotel-list">Sélectionnez un hôtel :</label>
 
                 <select id="hotel-list" class="form-select border border-danger border-2 rounded-4 shadow" name="hotel_id">
-                  <option value="hotel-1">Hôtel 1</option>
-                  <option value="hotel-2">Hôtel 2</option>
-                  <option value="hotel-3">Hôtel 3</option>
-                  <option value="hotel-4">Hôtel 4</option>
+                  @foreach ($hotels as $hotel)
+                      
+                 
+                  <option value="{{ $hotel->id }}">{{ $hotel->nom }}</option>
+                  @endforeach
                 </select>
             </div>
             
             <div class="mb-3 mx-1">
                 <label for="exampleFormControlInput1" class="form-label fw-semibold">Numero</label>
-                <input type="text" class="form-control border border-danger border-2 rounded-4 shadow" name="title">
+                <input type="text" class="form-control border border-danger border-2 rounded-4 shadow" name="numero">
             </div>
+            <div class="mb-3 mx-1">
+              <label class="form-label fw-semibold">Prix</label>
+              <input type="text" class="form-control border border-danger border-2 rounded-4 shadow" name="prix">
+          </div>
+          <div class="mb-3 mx-1">
+            <label for="exampleFormControlInput1" class="form-label fw-semibold">Type</label>
+            <select  class="form-select border border-danger border-2 rounded-4 shadow" name="type">
+              <option value="Chambre standard">Chambre standard</option>
+              <option value="Suite">Suite</option>
+              <option value="Chambre double">Chambre double</option>
+              <option value="Chambre avec vue">Chambre avec vue</option>
+           
+            </select> 
+        </div>
+
 
               <div class="mb-3 m-2">
                 <label  class="form-label fw-semibold">Nombre de lits</label>
@@ -102,16 +123,16 @@
               <div class="mb-3 m-2">
                 <label  class="form-label fw-semibold">réserve</label>
 
-                <select id="réserve"  class="form-select border border-danger border-2 rounded-4 shadow" name="bool">
-                  <option value="true">Réserve</option>
-                  <option value="false">No Réserve</option>
+                <select id="réserve"  class="form-select border border-danger border-2 rounded-4 shadow" name="réserve">
+                  <option value="1">Réserve</option>
+                  <option value="0">No Réserve</option>
                 </select>
             </div>
               <div class="mb-3 m-2">
                 <label  class="form-label fw-semibold">Image</label>
                 <input type="file" class="form-control border border-danger border-2 rounded-4 shadow" name="image1">
               </div>
-              <div class="mb-3 m-2">
+              {{-- <div class="mb-3 m-2">
                 <label for="exampleFormControlInput1" class="form-label fw-semibold">Image</label>
                 <input type="file" class="form-control border border-danger border-2 rounded-4 shadow" name="image2">
               </div>
@@ -122,7 +143,7 @@
               <div class="mb-3 m-2">
                 <label for="exampleFormControlInput1" class="form-label fw-semibold">Image</label>
                 <input type="file" class="form-control border border-danger border-2 rounded-4 shadow" name="image4">
-              </div>
+              </div> --}}
               <div class="mb-3  d-flex justify-content-center">
               <button type="submit" class="btn btn-danger px-3  border-2 rounded-4 shadow fw-semibold  ">Ajouter</button>
             </div>

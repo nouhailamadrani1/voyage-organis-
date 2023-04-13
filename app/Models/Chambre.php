@@ -22,6 +22,7 @@ class Chambre extends Model
         'réserve',
         'hotel_id',
         'type',
+        'prix',
     ];
 
     public function hotel()
