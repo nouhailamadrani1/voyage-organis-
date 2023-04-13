@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VoyageOrganise extends Model
+class Voyage extends Model
 {
-    use HasFactory;
+  
     use HasFactory;
     protected $fillable = [
         'titre',
@@ -25,4 +25,13 @@ class VoyageOrganise extends Model
          'transport_id',
      
   ];
+  public function hotel()
+  {
+      return $this->belongsTo(Hotel::class);
+  }
+  public function transport()
+  {
+      return $this->belongsTo(Transport::class);
+  }
+
 }

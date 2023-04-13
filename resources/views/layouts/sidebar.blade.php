@@ -84,9 +84,7 @@
 
               <li class=" m-1 list-group-item "><img src="https://img.icons8.com/ios-filled/20/228BE6/car.png"/><a  href="{{route('transports.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Tronsport</a></li>
               <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/medium-logo.png"/><a href="{{route('blogDashboard.index')}}"  class=" mx-2 text-decoration-none text-black fs-6">Blog</a></li>
-              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Voyage Organisé</a></li>
-                       <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Voyage Organisé</a></li>
-              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/dotty/20/228BE6/client-management.png"/><a href="statisic.php" class=" mx-2 text-decoration-none text-black fs-6">Clients</a></li>
+              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="{{route('voyageDashboard.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Voyage Organisé</a></li>
               
 
 

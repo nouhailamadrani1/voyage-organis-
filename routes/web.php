@@ -1,3 +1,4 @@
+
  <?php
     use App\Http\Controllers\ChambreController;
     use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,7 @@
     use App\Http\Controllers\TransportController;
     use App\Http\Controllers\ArticleAdminController;
     use App\Http\Controllers\StatistiquesController;
+    use App\Http\Controllers\VoyageOrganiseController;
 
     /*
     |--------------------------------------------------------------------------
@@ -46,9 +48,9 @@
     Route::get('/transportHome', function () {
         return view('transportHome');
     });
-    Route::get('/voyage2', function () {
-        return view('voyageDashboard');
-    });
+    // Route::get('/voyage2', function () {
+    //     return view('voyageDashboard');
+    // });
                     
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -65,3 +67,4 @@
    
     Route::get('/hotels',[HotelController::class ,'indexClient'])->name('hotels');
     Route::get('/transportClient',[TransportController::class ,'indexClient'])->name('transportClient');
+    Route::resource('voyageDashboard', VoyageOrganiseController::class);

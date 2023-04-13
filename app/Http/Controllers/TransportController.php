@@ -45,7 +45,7 @@ class TransportController extends Controller
 
         $transport->save();
 
-        return redirect()->route('transports.index');
+        return redirect()->route('voyageDashboard.index');
     }
 
     public function show(Transport $Transport)

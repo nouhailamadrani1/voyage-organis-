@@ -71,7 +71,7 @@
             </ul>
         </div><br />
         @endif
-        <form  method="POST" action="{{ route('hotel.store') }}" enctype="multipart/form-data">
+        <form  method="POST" action="{{ route('voyageDashboard.store') }}" enctype="multipart/form-data">
           @csrf
         <div  class="  p-1 bg-warning m-3 bg-opacity-10 p-2  border border-warning border-2 rounded-4 shadow" >
             <h6 class="d-flex justify-content-center m-2 mb-3 fw-semibold text-warning ">Organisé un voyage</h6>

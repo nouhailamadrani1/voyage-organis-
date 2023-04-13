@@ -13,7 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('voyage_organises', function (Blueprint $table) {
+        Schema::create('voyages', function (Blueprint $table) {
+            
             $table->id();
             $table->string('titre');
             $table->string('image')->nullable();
@@ -27,13 +28,18 @@ return new class extends Migration
             $table->date('date_arrivee');
             $table->time('heure_de_départ');
             $table->time('heure_arrivee');
+           
+           
+            $table->unsignedBigInteger('hotel_id');
             $table->foreign('hotel_id')
             ->references('id')->on('hotels')
             ->onDelete('cascade');
+            $table->unsignedBigInteger('transport_id');
             $table->foreign('transport_id')
             ->references('id')->on('transports')
             ->onDelete('cascade');
-            $table->timestamps();
+           $table->timestamps();
+           
         });
     }
 
@@ -44,6 +50,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voyage_organises');
+        Schema::dropIfExists('voyages');
     }
 };

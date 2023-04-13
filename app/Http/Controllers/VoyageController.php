@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\VoyageOrganise;
+use App\Models\Hotel;
+use App\Models\Transport;
+use App\Models\Voyage;
 use Illuminate\Http\Request;
 
-class VoyageOrganiseController extends Controller
+class VoyageController extends Controller
 {
     public function index()
     {
-        $voyageOrganises = VoyageOrganise::all();
-
-        return view('voyageDashboard.index', compact('voyageOrganises'));
+        $voyageOrganises = Voyage::all();
+         $transports= Transport::all();
+         $hotels=Hotel::all();
+        return view('voyageDashboard', compact('voyageOrganises','transports','hotels'));
     }
 
     public function create()
@@ -37,7 +40,7 @@ class VoyageOrganiseController extends Controller
             'transport_id' => 'required|exists:transports,id',
         ]);
 
-        $voyage = new VoyageOrganise();
+        $voyage = new Voyage();
         $voyage->fill($validatedData);
         if ($image = $request->file('image')) {
             $destinationPath = 'images/';
@@ -52,12 +55,12 @@ class VoyageOrganiseController extends Controller
         return redirect()->route('voyageDashboard.index')->with('success', 'Voyage organisé ajouté avec succès.');
     }
 
-    public function edit(VoyageOrganise $voyageOrganise)
+    public function edit(Voyage $voyage)
     {
         return view('voyageDashboard', compact('voyageOrganise'));
     }
 
-    public function update(Request $request, VoyageOrganise $voyageOrganise)
+    public function update(Request $request, Voyage $voyage)
     {
      
 

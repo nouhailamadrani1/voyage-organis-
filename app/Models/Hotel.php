@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Voyage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Hotel extends Model
 {
@@ -26,5 +27,9 @@ class Hotel extends Model
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+    public function voyage()
+    {
+        return $this->hasMany(Voyage::class);
     }
 }
