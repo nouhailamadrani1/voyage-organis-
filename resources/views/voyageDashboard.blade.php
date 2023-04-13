@@ -15,10 +15,11 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Ville</th>
-                    <th scope="col">N° Etoiles</th>
-                    <th scope="col">N° Chambre</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">pour</th>
+                    <th scope="col">de puis</th>
+                    <th scope="col">date de départ</th>
+                    <th scope="col">date de l'arrivee</th>
                     <th scope="col">Image</th>
                     <th scope="col">Action</th>
                    
@@ -28,14 +29,20 @@
                 <tbody>
                 
                   <tr>
+                      @foreach ($voyages as $voyage)
+                          
+                      
 
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td><img src="https://img.icons8.com/ios-filled/15/ffd50a/star--v1.png" class="px-1"/></td>
-                    <td></td>
-                    
-                    <td><img src="images/" class="" alt="" style="width: 50px ; hight: 50px"></td>
+                    <th scope="row">{{$voyage->id}}</th>
+                    <td>{{$voyage->titre}}</td>
+                    <td>{{$voyage->pour}}</td>
+                    <td>{{$voyage->depuis}}</td>
+                    <td>{{$voyage->date_de_départ}}</td>
+                    <td>{{$voyage->date_arrivee}}</td>
+
+            
+                    <td><img src="images/{{$voyage->image}}" class="" alt="" style="width: 50px ; hight: 50px"></td>
+
                     <td class="d-flex">
                    <form class="" action="" method="post">
                     @csrf
@@ -54,7 +61,7 @@
             </form>
                         
                     </td>
-                    
+                    @endforeach
                   </tr>
                     
 
@@ -84,7 +91,10 @@
                   
                 
             </div>
-           
+            <div class="mb-3 mx-1">
+              <label for="exampleFormControlInput1" class="form-label fw-semibold">prix</label>
+              <input type="text" class="form-control border border-warning border-2 rounded-4 shadow" name="prix">
+            </div>
                 <div class="mb-3 mx-1">
                     <label for="exampleFormControlInput1" class="form-label fw-semibold">Pays</label>
                     <input type="text" class="form-control border border-warning border-2 rounded-4 shadow" name="pays">

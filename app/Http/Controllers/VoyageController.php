@@ -11,10 +11,10 @@ class VoyageController extends Controller
 {
     public function index()
     {
-        $voyageOrganises = Voyage::all();
+        $voyages = Voyage::all();
          $transports= Transport::all();
          $hotels=Hotel::all();
-        return view('voyageDashboard', compact('voyageOrganises','transports','hotels'));
+        return view('voyageDashboard', compact('voyages','transports','hotels'));
     }
 
     public function create()
@@ -28,6 +28,7 @@ class VoyageController extends Controller
             'titre' => 'required',
             'image' => 'nullable|image|max:2048',
             'pays' => 'required|max:255',
+            'prix' => 'nullable',
             'nombre_place' => 'required|integer',
             'description' => 'required',
             'depuis'  => 'required',
