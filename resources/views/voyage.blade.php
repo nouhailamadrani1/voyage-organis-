@@ -13,97 +13,44 @@
     </div>
     <img src="img/333.jpg" alt="">
 </div>
+<h4 class="text-center">NOS BONS PLANS DU MOMENT</h4>
+<section class="d-flex justify-content-center flex-wrap p-2"> 
 
-<div class="d-flex  justify-content-center">
   @foreach ($voyages as $voyage)
       
 
+  <div class="card m-1 shadow-lg" style="width: 18rem;">
+      <img src="images/{{ ($voyage->image) }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><b>{{ $voyage->Titre }}</b></h5>
+    
+        <p class="fw-light my-0"><b>Ville:</b> {{ $voyage->pour }}</p>
+        <p class="fw-light my-0"><b>Prix:</b> {{ $voyage->prix }}DH</p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Voir plus</button>
 
-    <div class="d-flex  justify-content-between align-items-center w-50">
-        <div class="accordion " id="accordionPanelsStayOpenExample">
-        <div class="accordion-item ">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-            Voyage
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-            <div class="accordion-body ">
-    
-                <div class="row">
-                    <div class="col-4 mb-3 mb-sm-0">
-                      <div class="card border-0">
-                        <div class="card-body">
-                          <h5 class="card-title">{{$voyage->pour}}</h5>
-                          <img src="img/tanger123.jpg" style="width: 100%">
-                       
-                        
-                          
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-7">
-                      <div class="card border-0">
-                        <div class="card-body">
-                          <h5 class="card-title">{{$voyage->titre}}</h5>
-                          
-                          <p class="card-text " style="width: 40ch">{{$voyage->description}}
-                       
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-    
-            </div>
+        <div class="offcanvas offcanvas-top h-100" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body ">
+      <div class="d-flex justify-content-start flex-wrap p-2 w-50" >     <div class="w-50">  <h5>Titre :{{ $voyage->Titre }}</b></h5>
+        <p>{{ $voyage->description }}</p></div>
+        <img src="images/{{ ($voyage->image) }}" class="w-50" alt="..."></div>
+        <div>
+          <h6>Transport</h6>
+          
+        </div>
+            
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-             Hotel
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <div class="d-flex  ">
-                         <img src="img/novo1.jpg" style="width: 45%">
-                <div class="p-2">  
-                    <h5 class="card-title">{{$voyage->hotel->nom}}</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/>({{$voyage->hotel->nbre_etoiles}}) </span> </h5>
-                    <p class="fw-light"><b>Ville:</b>{{$voyage->hotel->ville}}<b></p>
-                        <p class="fw-light"><b>Pays:</b>{{$voyage->hotel->pays}}<b></p>
-                  </div>
-        
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-              Tronsport
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <div class="d-flex">
-                <div>  <h6 class="my-0"><b>{{$voyage->transport->nom}}</b></p>
-                    <p class="fw-light my-0"><b>Nombre passagers:</b>{{$voyage->transport->nom}}</p>
-                    <p class="fw-light my-0"><b>De puis:</b>{{$voyage->transport->nom}}</p>
-                    <p class="fw-light my-0"><b>Pour :</b>{{$voyage->transport->nom}}</p>
-                    <p class="fw-light my-0"><b>Heure départ :</b>{{$voyage->transport->nom}}</p>
-                    <p class="fw-light my-0"><b>Heure arrivee :</b>{{$voyage->transport->nom}}</p>
-                    <p class="fw-light my-0"><b>Date départ :</b>{{$voyage->transport->nom}}</p>
-                    <p class="fw-light my-0"><b>Date arrivee :</b>{{$voyage->transport->nom}}</p></div>
-                    <img src="img/mercedes-van-1.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div></div>
-      @endforeach
-    
-</div>
+      </div>
+    </div>
+    @endforeach
+   
+ </section>
+ 
+ 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
 </script>
