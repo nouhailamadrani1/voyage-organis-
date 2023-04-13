@@ -41,12 +41,7 @@
           <h5 class="card-title"><b>{{ $transport->nom }}</b></h5>
       
           <p class="fw-light my-0"><b>Nombre passagers:</b> {{ $transport->nombre_passagers }}</p>
-          <p class="fw-light my-0"><b>De puis:</b> {{ $transport->depuis }}</p>
-          <p class="fw-light my-0"><b>Pour :</b> {{ $transport->pour }}</p>
-          <p class="fw-light my-0"><b>Heure départ :</b> {{ $transport->heure_de_départ }}</p>
-          <p class="fw-light my-0"><b>Heure arrivee :</b> {{ $transport->heure_arrivee }}</p>
-          <p class="fw-light my-0"><b>Date départ :</b> {{ $transport->date_de_départ }}</p>
-          <p class="fw-light my-0"><b>Date arrivee :</b> {{ $transport->date_arrivee }}</p>
+          
           <a href="#" class="btn btn-warning shadow-lg  my-2 rounded d-flex justify-content-center">réservez votre place</a>
         </div>
       </div>

@@ -62,12 +62,6 @@ class TransportController extends Controller
     {
         $validatedData = $request->validate([
             'nom' => 'required',
-            'depuis'  => 'required',
-            'pour'  => 'required',
-            'date_de_départ'  => 'required',
-            'date_arrivee'  => 'required|date|after_or_equal:date_de_départ',
-            'heure_de_départ'  => 'required',
-            'heure_arrivee'  => 'required',
             'nombre_passagers'  => 'required',
             'prix'  => 'required',
             'image'=>'required'

@@ -86,36 +86,7 @@
                     <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="nombre_passagers">
                   </div>
             </div>
-           <div  class="d-flex justify-content-evenly">
-            <div class="mb-3 mx-1">
-                <label for="exampleFormControlInput1" class="form-label fw-semibold">De puis</label>
-                <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="depuis">
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label fw-semibold">Pour</label>
-                <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="pour">
-              </div>
-           </div>
-           <div  class="d-flex justify-content-evenly">
-            <div class="mb-3 mx-1">
-                <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de départ</label>
-                <input type="date" class="form-control border border-success border-2 rounded-4 shadow" name="date_de_départ">
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de l'arrivee</label>
-                <input type="date" class="form-control border border-success border-2 rounded-4 shadow" name="date_arrivee">
-              </div>
-           </div>
-           <div  class="d-flex justify-content-evenly">
-            <div class="mb-3 mx-1">
-                <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de départ</label>
-                <input type="time" class="form-control border border-success border-2 rounded-4 shadow" name="heure_de_départ">
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de l'arrivee</label>
-                <input type="time" class="form-control border border-success border-2 rounded-4 shadow" name="heure_arrivee">
-              </div>
-           </div>
+           
            <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label fw-semibold">Prix</label>
             <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="prix">

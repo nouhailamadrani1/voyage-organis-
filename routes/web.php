@@ -46,8 +46,8 @@
     Route::get('/transportHome', function () {
         return view('transportHome');
     });
-    Route::get('/clients', function () {
-        return view('clients');
+    Route::get('/voyage2', function () {
+        return view('voyageDashboard');
     });
                     
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -62,6 +62,6 @@
     Route::resource('blogDashboard', ArticleAdminController::class);
     Route::resource('chambers', ChambreController::class);
     Route::get('/noha',[StatistiquesController::class ,'count']);
-    // Route::get('/noha',[StatistiquesController::class ,'countHotel']);
+   
     Route::get('/hotels',[HotelController::class ,'indexClient'])->name('hotels');
     Route::get('/transportClient',[TransportController::class ,'indexClient'])->name('transportClient');
