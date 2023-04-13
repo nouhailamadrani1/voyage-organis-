@@ -34,7 +34,7 @@
         
                             <ul class="d-flex justify-content-center flex-wrap  list-inline ">
                               <li class=" ">
-                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="#"><b>Accueil</b></a>
+                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="{{route('home')}}"><b>Accueil</b></a>
                               </li>
                               <li class="">
                                 <a class="nav-link px-3 py-1 mx-3 text-dark" href="{{route('articles.index')}}"><b>Blog</b></a>
@@ -46,7 +46,7 @@
                                 <a class="nav-link px-3 py-1  mx-3 text-dark" href="{{route('transportClient')}}"><b>Tronsport</b></a>
                               </li>
                               <li class="">
-                                <a class="nav-link px-3 py-1 mx-3 text-dark" href="#"><b>Voyage Organisés</b></a>
+                                <a class="nav-link px-3 py-1 mx-3 text-dark" href="{{route('voyageOrganise')}}"><b>Voyage Organisés</b></a>
                               </li>
                             </ul>
                           </div>

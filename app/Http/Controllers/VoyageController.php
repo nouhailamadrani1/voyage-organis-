@@ -67,5 +67,13 @@ class VoyageController extends Controller
      
 
     }
+    public function showHome()
+    {
+        $voyages = Voyage::all();
+         $transports= Transport::all();
+         $hotels=Hotel::all();
+        return view('voyage', compact('voyages','transports','hotels'));
+    }
+
 
 }

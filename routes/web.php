@@ -68,3 +68,4 @@
     Route::get('/hotels',[HotelController::class ,'indexClient'])->name('hotels');
     Route::get('/transportClient',[TransportController::class ,'indexClient'])->name('transportClient');
     Route::resource('voyageDashboard', VoyageController::class);
+    Route::get('/voyageOrganise',[VoyageController::class ,'showHome'])->name('voyageOrganise');
