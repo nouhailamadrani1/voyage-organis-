@@ -27,7 +27,7 @@
     
         <p class="fw-light my-0"><b>Ville:</b> {{ $voyage->pour }}</p>
         <p class="fw-light my-0"><b>Prix:</b> {{ $voyage->prix }}DH</p>
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#{{ $voyage->id }}" aria-controls="offcanvasTop">Voir plus</button>
+        <button class="btn btn-primary"  type="button" data-bs-toggle="offcanvas" data-bs-target="#{{ $voyage->id }}" aria-controls="offcanvasTop">Voir plus</button>
 
         <div class="offcanvas offcanvas-top h-100" tabindex="-1" id="{{ $voyage->id }}" aria-labelledby="offcanvasTopLabel">
           <div class="offcanvas-header">
@@ -35,7 +35,47 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body d-flex justify-content-between flex-wrap  ">
-            <div class="w-50  p-2 shadow bg-white">   <form class="w-100">
+          
+            <div class="m-0  w-50 "> 
+      <div class="d-flex justify-content-between flex-wrap   shadow"  >
+      
+        <div class=" "   style="width: 65%">  <h5>{{ $voyage->titre }}</h5>
+       </div>
+        <img src="images/{{ ($voyage->image) }}" style="width: 30%" alt="..."></div>
+        <div class=" shadow text-start p-2">
+          <h6>Transport</h6>
+          <div class="d-flex justify-content-between">
+            <div>  <h6 class="my-0"><b>{{$voyage->transport->nom}}</b></p>
+                <p class="fw-light my-0"><b>Nombre passagers:</b>{{$voyage->transport->nombre_passagers}}</p>
+                <p class="fw-light my-0"><b>De puis:</b>{{$voyage->depuis}}</p>
+                <p class="fw-light my-0"><b>Pour :</b>{{$voyage->pour}}</p>
+                <p class="fw-light my-0"><b>Heure départ :</b>{{$voyage->heure_de_départ}}</p>
+                <p class="fw-light my-0"><b>Heure arrivee :</b>{{$voyage->heure_arrivee}}</p>
+                <p class="fw-light my-0"><b>Date départ :</b>{{$voyage->date_de_départ}}</p>
+                <p class="fw-light my-0"><b>Date arrivee :</b>{{$voyage->date_arrivee}}</p></div>
+                <img src="images/{{$voyage->transport->image}}" style="width: 40%" alt="">
+          </div>
+        </div>
+        <div class=" card my-2 p-2 d-flex justify-content-center  border-0 shadow ">
+          <div class="d-flex justify-content-evenly align-items-center ">
+          <img src="images/{{$voyage->hotel->image}}" style="width: 100px">
+ <div class="p-2">  
+     <h5 class="card-title">{{$voyage->hotel->nom}}</b><span><img  class="" src="https://img.icons8.com/3d-fluency/20/null/star.png"/>({{$voyage->hotel->nbre_etoiles}}) </span> </h5>
+     <p class="fw-light"><b>Ville:</b>{{$voyage->hotel->ville}}<b></p>
+         <p class="fw-light"><b>Pays:</b>{{$voyage->hotel->pays}}<b></p>
+          
+   </div>
+   <div class="btn-group dropend">
+    <a  class="btn btn-secondary dropdown-toggle" href="{{route('voyageOrganise'),$voyage->hotel->id}}" data-bs-toggle="dropdown" aria-expanded="false">
+     Les Chambers
+    </a>
+    <ul class="dropdown-menu">
+     
+    </ul>
+  </div>
+</div></div>
+           </div>
+           <div class="  p-2 shadow bg-white">   <form class="">
             <h5 class="text-center">réservation</h5>
            
             <label class="form-label fw-semibold">Nom</label>
@@ -44,15 +84,7 @@
             <input class="form-control" type="text" value="{{ Auth::user()->email }}" name="clientEmail"  aria-label="Disabled input example" disabled readonly>
             <label class="form-label fw-semibold">Hotel</label>
             <input class="form-control" type="text" value="{{$voyage->hotel->nom}}" name="hotel_nom"  aria-label="Disabled input example" disabled readonly>
-            <label class="form-label fw-semibold">Chamber</label>
-            <select class="form-select mb-3" name="chamber_id">
-              @foreach ($hotels as $hotel)
-                  
-             
-              <option value="{{ $hotel->id }}">{{  $hotel->nom }}</option>
-              @endforeach
-            </select>
-            <div class="mb-3 mx-1">
+                       <div class="mb-3 mx-1">
               <label for="exampleFormControlInput1" class="form-label fw-semibold">Pays</label>
               <input type="text" class="form-control " name="pays" value="{{$voyage->pays}}" disabled readonly>
             </div>
@@ -97,36 +129,6 @@
       
             </form>
              </div>
-            <div class="w-50 p-2  "> 
-      <div class="d-flex justify-content-between flex-wrap p-2 w-100 my-2  shadow"  >
-      
-            <div class=" p-2"   style="width: 65%">  <h5>Titre :{{ $voyage->Titre }}</b></h5>
-        <p>{{ $voyage->description }}</p></div>
-        <img src="images/{{ ($voyage->image) }}" style="width: 30%" alt="..."></div>
-        <div class=" shadow text-start p-2">
-          <h6>Transport</h6>
-          <div class="d-flex justify-content-between">
-            <div>  <h6 class="my-0"><b>{{$voyage->transport->nom}}</b></p>
-                <p class="fw-light my-0"><b>Nombre passagers:</b>{{$voyage->transport->nombre_passagers}}</p>
-                <p class="fw-light my-0"><b>De puis:</b>{{$voyage->depuis}}</p>
-                <p class="fw-light my-0"><b>Pour :</b>{{$voyage->pour}}</p>
-                <p class="fw-light my-0"><b>Heure départ :</b>{{$voyage->heure_de_départ}}</p>
-                <p class="fw-light my-0"><b>Heure arrivee :</b>{{$voyage->heure_arrivee}}</p>
-                <p class="fw-light my-0"><b>Date départ :</b>{{$voyage->date_de_départ}}</p>
-                <p class="fw-light my-0"><b>Date arrivee :</b>{{$voyage->date_arrivee}}</p></div>
-                <img src="images/{{$voyage->transport->image}}" style="width: 40%" alt="">
-          </div>
-        </div>
-        <div class=" card my-2 p-2 d-flex justify-content-center border-0 shadow "><div class="d-flex justify-content-between ">
-          <img src="images/{{$voyage->hotel->image}}" style="width: 30%">
- <div class="p-2">  
-     <h5 class="card-title">{{$voyage->hotel->nom}}</b><span><img  class="" src="https://img.icons8.com/3d-fluency/20/null/star.png"/>({{$voyage->hotel->nbre_etoiles}}) </span> </h5>
-     <p class="fw-light"><b>Ville:</b>{{$voyage->hotel->ville}}<b></p>
-         <p class="fw-light"><b>Pays:</b>{{$voyage->hotel->pays}}<b></p>
-   </div>
-
-</div></div>
-           </div>
           </div>
         </div>
       </div>

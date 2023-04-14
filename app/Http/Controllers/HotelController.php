@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chambre;
+
 use App\Models\Hotel;
 use Illuminate\Http\Request;
 
@@ -14,10 +14,7 @@ class HotelController extends Controller
       
         return view('hotel', compact('hotels'));
     }
-    public function Chamber($id){
-        $chambres = Chambre::where('hotel_id', $id)->get();
-        return view('hotel', compact('chambres'));
-    }
+  
     public function create()
     {
         return view('hotel.create');

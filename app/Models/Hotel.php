@@ -19,10 +19,7 @@ class Hotel extends Model
         'nbre_etoiles'
     ];
 
-    public function chambres()
-    {
-        return $this->hasMany(Chambre::class);
-    }
+    
 
     public function reservations()
     {

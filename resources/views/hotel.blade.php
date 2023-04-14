@@ -18,7 +18,6 @@
                     <th scope="col">Nom</th>
                     <th scope="col">Ville</th>
                     <th scope="col">N° Etoiles</th>
-                    <th scope="col">N° Chambre</th>
                     <th scope="col">Image</th>
                     <th scope="col">Action</th>
                    
@@ -33,7 +32,6 @@
                     <td>{{ $hotel->nom }}</td>
                     <td>{{ $hotel->ville }}</td>
                     <td>{{ $hotel->nbre_etoiles }}<img src="https://img.icons8.com/ios-filled/15/ffd50a/star--v1.png" class="px-1"/></td>
-                    <td>{{ $hotel->Chambre}}</td>
                     
                     <td><img src="images/{{ ($hotel->image) }}" class="" alt="" style="width: 50px ; hight: 50px"></td>
                     <td class="d-flex">
