@@ -1,13 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Models\User;
 use App\Models\Voyage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Reservation extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'clientNom',
         'clientEmail',

@@ -7,6 +7,7 @@ use App\Models\Transport;
 use App\Models\Voyage;
 use Illuminate\Http\Request;
 
+
 class VoyageController extends Controller
 {
     public function index()

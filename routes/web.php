@@ -1,4 +1,5 @@
 
+
  <?php
 
     use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@
     use App\Http\Controllers\ArticleAdminController;
     use App\Http\Controllers\StatistiquesController;
     use App\Http\Controllers\VoyageController;
-
+    use App\Http\Controllers\ReservationController;
     
 
     Route::get('/', function () {
@@ -52,3 +53,4 @@
     Route::get('/transportClient',[TransportController::class ,'indexClient'])->name('transportClient');
     Route::resource('voyageDashboard', VoyageController::class);
     Route::get('/voyageOrganise',[VoyageController::class ,'showHome'])->name('voyageOrganise');
+    Route::resource('reservation', ReservationController::class);

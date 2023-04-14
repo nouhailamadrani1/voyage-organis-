@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use Illuminate\Http\Request;
-use App\Reservation;
+
 
 class ReservationController extends Controller
 {
@@ -21,6 +22,7 @@ class ReservationController extends Controller
             'heure_de_départ' => $request->input('heure_de_départ'),
             'heure_arrivee' => $request->input('heure_arrivee'),
             'client_id' => $request->input('client_id'),
+            'voyage_id' => $request->input('voyage_id'),
             'prix_totale'=>$request->input('prix_totale')
            
         ]);
@@ -29,4 +31,5 @@ class ReservationController extends Controller
 
         return redirect()->back()->with('success', 'Reservation added successfully!');
     }
+    
 }

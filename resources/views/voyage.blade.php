@@ -68,49 +68,51 @@
    
 </div></div>
            </div>
-           <div class="  p-2 shadow bg-white">   <form class="">
+           <div class="  p-2 shadow bg-white">  
+            <form  method="POST" action="{{ route('reservation.store') }}" enctype="multipart/form-data">
+              @csrf
             <h5 class="text-center">réservation</h5>
             <input type="hidden" value="{{ Auth::user()->id }}" name="client_id">
             <label class="form-label fw-semibold">Nom</label>
-            <input class="form-control" type="text" value="{{ Auth::user()->name }}" name="clientNom"  aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="text" value="{{ Auth::user()->name }}" name="clientNom"   >
             <label class="form-label fw-semibold">id voyage</label>
-            <input class="form-control" type="text" value="{{ $voyage->id}}" name="voyage_id"  aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="text" value="{{ $voyage->id}}" name="voyage_id" >
             <label class="form-label fw-semibold">Email</label>
-            <input class="form-control" type="text" value="{{ Auth::user()->email }}" name="clientEmail"  aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="text" value="{{ Auth::user()->email }}" name="clientEmail"    >
             <label class="form-label fw-semibold">Hotel</label>
-            <input class="form-control" type="text" value="{{$voyage->hotel->nom}}" name="hotel_nom"  aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="text" value="{{$voyage->hotel->nom}}" name="hotel_nom"  >
                        <div class="mb-3 mx-1">
               <label for="exampleFormControlInput1" class="form-label fw-semibold">Pays</label>
-              <input type="text" class="form-control " name="pays" value="{{$voyage->pays}}" disabled readonly>
+              <input type="text" class="form-control " name="pays" value="{{$voyage->pays}}" >
             </div>
             <div  class="d-flex justify-content-evenly">
               <div class="mb-3 mx-1">
                   <label for="exampleFormControlInput1" class="form-label fw-semibold">De puis</label>
-                  <input type="text" class="form-control " name="depuis" value="{{$voyage->depuis}}" disabled readonly>
+                  <input type="text" class="form-control " name="depuis" value="{{$voyage->depuis}}"  >
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label fw-semibold">Pour</label>
-                  <input type="text" class="form-control " name="pour" value=" {{$voyage->pour}}" disabled readonly>
+                  <input type="text" class="form-control " name="pour" value=" {{$voyage->pour}}" >
                 </div>
              </div>
             <div  class="d-flex justify-content-evenly">
               <div class="mb-3 mx-1">
                   <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de départ</label>
-                  <input type="date" class="form-control " name="date_de_départ" value="{{$voyage->date_de_départ}}" disabled readonly>
+                  <input type="date" class="form-control " name="date_de_départ" value="{{$voyage->date_de_départ}}" >
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de l'arrivee</label>
-                  <input type="date" class="form-control " name="date_arrivee" value="{{$voyage->date_arrivee}}" disabled readonly>
+                  <input type="date" class="form-control " name="date_arrivee" value="{{$voyage->date_arrivee}}" >
                 </div>
              </div>
              <div  class="d-flex justify-content-evenly">
               <div class="mb-3 mx-1">
                   <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de départ</label>
-                  <input type="time" class="form-control " name="heure_de_départ" value="{{$voyage->heure_de_départ}}" disabled readonly>
+                  <input type="time" class="form-control " name="heure_de_départ" value="{{$voyage->heure_de_départ}}" >
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de l'arrivee</label>
-                  <input type="time" class="form-control " name="heure_arrivee" value="{{$voyage->heure_arrivee}}" disabled readonly>
+                  <input type="time" class="form-control " name="heure_arrivee" value="{{$voyage->heure_arrivee}}">
                 </div>
              </div>
              <div class="d-flex justify-content-between p-2 mt-3 border shadow border-2 align-items-center"><div>
