@@ -100,7 +100,7 @@
 
               <div class="mb-3 m-2">
                 <label for="exampleFormControlTextarea1" class="form-label fw-semibold">Description</label>
-                <textarea class="form-control border border-warning border-2 rounded-4 shadow" name="description" rows="3"></textarea>
+                <textarea  class="form-control border border-warning border-2 rounded-4 shadow" name="description" rows="3"></textarea>
               </div>
               <div class="mb-3 m-2">
                 <label for="exampleFormControlInput1" class="form-label fw-semibold">Image</label>
