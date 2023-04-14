@@ -39,7 +39,9 @@
             <div class="m-0  w-50 "> 
       <div class="d-flex justify-content-between flex-wrap   shadow"  >
       
-        <div class=" "   style="width: 65%">  <h5>{{ $voyage->titre }}</h5>
+        <div class=" "   style="width: 65%">  
+          <h5>{{ $voyage->titre }}</h5>
+          <p>{{ $voyage->description}}</p>
        </div>
         <img src="images/{{ ($voyage->image) }}" style="width: 30%" alt="..."></div>
         <div class=" shadow text-start p-2">
