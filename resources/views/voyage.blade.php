@@ -33,15 +33,53 @@
             <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body ">
-      <div class="d-flex justify-content-start flex-wrap p-2 w-50" >     <div class="w-50">  <h5>Titre :{{ $voyage->Titre }}</b></h5>
+          <div class="offcanvas-body d-flex justify-content-between flex-wrap  ">
+            <div>     <div> <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form></div></div>
+            <div> 
+      <div class="d-flex justify-content-start flex-wrap p-2 w-50" >
+      
+            <div class="w-50">  <h5>Titre :{{ $voyage->Titre }}</b></h5>
         <p>{{ $voyage->description }}</p></div>
         <img src="images/{{ ($voyage->image) }}" class="w-50" alt="..."></div>
         <div>
           <h6>Transport</h6>
-          
+          <div class="d-flex">
+            <div>  <h6 class="my-0"><b>{{$voyage->transport->nom}}</b></p>
+                <p class="fw-light my-0"><b>Nombre passagers:</b>{{$voyage->transport->nombre_passagers}}</p>
+                <p class="fw-light my-0"><b>De puis:</b>{{$voyage->depuis}}</p>
+                <p class="fw-light my-0"><b>Pour :</b>{{$voyage->pour}}</p>
+                <p class="fw-light my-0"><b>Heure départ :</b>{{$voyage->heure_de_départ}}</p>
+                <p class="fw-light my-0"><b>Heure arrivee :</b>{{$voyage->heure_arrivee}}</p>
+                <p class="fw-light my-0"><b>Date départ :</b>{{$voyage->date_de_départ}}</p>
+                <p class="fw-light my-0"><b>Date arrivee :</b>{{$voyage->date_arrivee}}</p></div>
+                <img src="images/{{$voyage->transport->image}}" alt="">
+          </div>
         </div>
-            
+        <div><div class="d-flex  ">
+          <img src="images/{{$voyage->hotel->image}}" style="width: 20%">
+ <div class="p-2">  
+     <h5 class="card-title">{{$voyage->hotel->nom}}</b><span><img  class="" src="https://img.icons8.com/3d-fluency/20/null/star.png"/>({{$voyage->hotel->nbre_etoiles}}) </span> </h5>
+     <p class="fw-light"><b>Ville:</b>{{$voyage->hotel->ville}}<b></p>
+         <p class="fw-light"><b>Pays:</b>{{$voyage->hotel->pays}}<b></p>
+   </div>
+
+</div></div>
+           </div>
           </div>
         </div>
       </div>
