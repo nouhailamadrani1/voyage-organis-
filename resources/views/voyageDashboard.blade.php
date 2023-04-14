@@ -27,9 +27,9 @@
                 </thead>
 
                 <tbody>
-                
+                  @foreach ($voyages as $voyage)
                   <tr>
-                      @foreach ($voyages as $voyage)
+                     
                           
                       
 
@@ -61,9 +61,9 @@
             </form>
                         
                     </td>
-                    @endforeach
+               
                   </tr>
-                    
+                  @endforeach
 
               
                 </tbody>

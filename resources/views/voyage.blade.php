@@ -14,9 +14,10 @@
     <img src="img/333.jpg" alt="">
 </div>
 <h4 class="text-center">NOS BONS PLANS DU MOMENT</h4>
-<section class="d-flex justify-content-center flex-wrap p-2"> 
 
+<section class="d-flex justify-content-center flex-wrap p-2"> 
   @foreach ($voyages as $voyage)
+ 
       
   
   <div class="card m-1 shadow-lg" style="width: 18rem;">
@@ -26,9 +27,9 @@
     
         <p class="fw-light my-0"><b>Ville:</b> {{ $voyage->pour }}</p>
         <p class="fw-light my-0"><b>Prix:</b> {{ $voyage->prix }}DH</p>
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Voir plus</button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#{{ $voyage->id }}" aria-controls="offcanvasTop">Voir plus</button>
 
-        <div class="offcanvas offcanvas-top h-100" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas offcanvas-top h-100" tabindex="-1" id="{{ $voyage->id }}" aria-labelledby="offcanvasTopLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasTopLabel">Voyage</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -97,11 +98,11 @@
             </form>
              </div>
             <div class="w-50 p-2  "> 
-      <div class="d-flex  flex-wrap p-2 w-100 my-2  shadow"  >
+      <div class="d-flex justify-content-between flex-wrap p-2 w-100 my-2  shadow"  >
       
-            <div class="w-50 p-2">  <h5>Titre :{{ $voyage->Titre }}</b></h5>
+            <div class=" p-2"   style="width: 65%">  <h5>Titre :{{ $voyage->Titre }}</b></h5>
         <p>{{ $voyage->description }}</p></div>
-        <img src="images/{{ ($voyage->image) }}" class="w-50" alt="..."></div>
+        <img src="images/{{ ($voyage->image) }}" style="width: 30%" alt="..."></div>
         <div class=" shadow text-start p-2">
           <h6>Transport</h6>
           <div class="d-flex justify-content-between">
@@ -130,10 +131,10 @@
         </div>
       </div>
     </div>
+
     @endforeach
-   
  </section>
- 
+
  
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
