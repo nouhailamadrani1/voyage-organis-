@@ -65,14 +65,7 @@
          <p class="fw-light"><b>Pays:</b>{{$voyage->hotel->pays}}<b></p>
           
    </div>
-   <div class="btn-group dropend">
-    <a  class="btn btn-secondary dropdown-toggle" href="{{route('voyageOrganise'),$voyage->hotel->id}}" data-bs-toggle="dropdown" aria-expanded="false">
-     Les Chambers
-    </a>
-    <ul class="dropdown-menu">
-     
-    </ul>
-  </div>
+   
 </div></div>
            </div>
            <div class="  p-2 shadow bg-white">   <form class="">
