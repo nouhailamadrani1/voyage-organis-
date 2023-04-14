@@ -70,9 +70,11 @@
            </div>
            <div class="  p-2 shadow bg-white">   <form class="">
             <h5 class="text-center">réservation</h5>
-           
+            <input type="hidden" value="{{ Auth::user()->id }}" name="client_id">
             <label class="form-label fw-semibold">Nom</label>
             <input class="form-control" type="text" value="{{ Auth::user()->name }}" name="clientNom"  aria-label="Disabled input example" disabled readonly>
+            <label class="form-label fw-semibold">id voyage</label>
+            <input class="form-control" type="text" value="{{ $voyage->id}}" name="voyage_id"  aria-label="Disabled input example" disabled readonly>
             <label class="form-label fw-semibold">Email</label>
             <input class="form-control" type="text" value="{{ Auth::user()->email }}" name="clientEmail"  aria-label="Disabled input example" disabled readonly>
             <label class="form-label fw-semibold">Hotel</label>
@@ -112,12 +114,13 @@
                 </div>
              </div>
              <div class="d-flex justify-content-between p-2 mt-3 border shadow border-2 align-items-center"><div>
-              <h6>Prix Hotel : 600 DH</h6>
-              <h6>Prix Tronsport : 700DH</h6>
-              <h6>Prix Agence : 300DH</h6>
+              <h6>Prix Hotel :{{$voyage->hotel->prix}} DH</h6>
+              <h6>Prix Tronsport : {{$voyage->transport->prix}} DH</h6>
+              <h6>Prix Agence : {{$voyage->prix}} DH</h6>
              
-            </div> <h5> Prix Total :    1300  DH</h5></div>
-             
+            </div> <h5> Prix Total :{{$voyage->hotel->prix + $voyage->transport->prix + $voyage->prix}} DH  </h5></div>
+            <input type="hidden" class="form-control " name="prix_totale" value="{{$voyage->hotel->prix + $voyage->transport->prix + $voyage->prix}}" >
+
             <button type="submit" class="btn btn-primary mt-4  d-flex align-items-center">réserve</button>
       
             </form>

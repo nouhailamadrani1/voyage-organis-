@@ -72,6 +72,7 @@ class VoyageController extends Controller
         $voyages = Voyage::all();
          $transports= Transport::all();
          $hotels=Hotel::all();
+        
         return view('voyage', compact('voyages','transports','hotels'));
     }
     // public function destroy(Voyage $voyage ,$id)

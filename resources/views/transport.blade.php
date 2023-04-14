@@ -83,13 +83,13 @@
                   
                   <div class="mb-3 ">
                     <label for="exampleFormControlInput1" class="form-label fw-semibold">Nombre Passagers</label>
-                    <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="nombre_passagers">
+                    <input type="number" class="form-control border border-success border-2 rounded-4 shadow" name="nombre_passagers">
                   </div>
             </div>
            
            <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label fw-semibold">Prix</label>
-            <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="prix">
+            <input type="number" class="form-control border border-success border-2 rounded-4 shadow" name="prix">
           </div>
           <div class="mb-3 m-2">
             <label for="exampleFormControlTextarea1" class="form-label fw-semibold">Description</label>

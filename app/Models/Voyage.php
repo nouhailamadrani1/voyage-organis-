@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Reservation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -33,6 +34,10 @@ class Voyage extends Model
   public function transport()
   {
       return $this->belongsTo(Transport::class);
+  }
+  public function reservation()
+  {
+      return $this->hasMany(Reservation::class);
   }
 
 }
