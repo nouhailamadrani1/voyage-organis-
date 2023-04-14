@@ -14,13 +14,11 @@ class Transport extends Model
           'nombre_passagers',
           'image',
           'prix',
+          'description'
 
          
     ];
-    public function reservationsTransport()
-    {
-        return $this->hasMany(ReservationTransport::class);
-    }
+  
     public function voyage()
     {
         return $this->hasMany(Voyage::class);

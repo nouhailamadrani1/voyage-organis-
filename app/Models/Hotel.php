@@ -17,16 +17,12 @@ class Hotel extends Model
         'pays',
         'description',
         'nbre_etoiles',
-        
+        'prix',
         
     ];
 
-    
 
-    public function reservations()
-    {
-        return $this->hasMany(Reservation::class);
-    }
+    
     public function voyage()
     {
         return $this->hasMany(Voyage::class);

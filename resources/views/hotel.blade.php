@@ -92,10 +92,13 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label fw-semibold">Nbre etoiles</label>
-                <input type="text" class="form-control border border-warning border-2 rounded-4 shadow" name="nbre_etoiles">
+                <input type="number" class="form-control border border-warning border-2 rounded-4 shadow" name="nbre_etoiles">
               </div>
            </div>
-             
+           <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label fw-semibold">prix</label>
+            <input type="number" class="form-control border border-warning border-2 rounded-4 shadow" name="prix">
+          </div>
              
 
               <div class="mb-3 m-2">
