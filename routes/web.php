@@ -46,7 +46,7 @@
     Route::resource('hotel', HotelController::class);
     Route::resource('transports', TransportController::class);
     Route::resource('blogDashboard', ArticleAdminController::class);
-    Route::resource('chambers', ChambreController::class);
+  
     Route::get('/noha',[StatistiquesController::class ,'count']);
     Route::get('/hotels',[HotelController::class ,'indexClient'])->name('hotels');
     Route::get('/transportClient',[TransportController::class ,'indexClient'])->name('transportClient');

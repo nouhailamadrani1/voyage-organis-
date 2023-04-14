@@ -44,11 +44,11 @@
                     <td><img src="images/{{$voyage->image}}" class="" alt="" style="width: 50px ; hight: 50px"></td>
 
                     <td class="d-flex">
-                   <form class="" action="" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/f11010/delete-forever.png"/></button>
-                </form>
+                      <form class="" action="{{ route('voyageDashboard.destroy', $voyage->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/f11010/delete-forever.png"/></button>
+                    </form>
                 <form class="" action="" method="post">
                   @csrf
                   @method('DELETE')

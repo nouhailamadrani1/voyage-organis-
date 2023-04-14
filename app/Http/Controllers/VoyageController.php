@@ -74,6 +74,17 @@ class VoyageController extends Controller
          $hotels=Hotel::all();
         return view('voyage', compact('voyages','transports','hotels'));
     }
+    // public function destroy(Voyage $voyage ,$id)
+    // {
+    //     $voyage->delete($id);
+    //     return redirect()->route('voyageDashboard.index');
+    // }
 
+    public function destroy($id)
+{
+    $voyage = Voyage::findOrFail($id);
+    $voyage->delete();
+    return redirect()->route('voyageDashboard.index');
+}
 
 }

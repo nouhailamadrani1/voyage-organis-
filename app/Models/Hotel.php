@@ -16,7 +16,9 @@ class Hotel extends Model
         'ville',
         'pays',
         'description',
-        'nbre_etoiles'
+        'nbre_etoiles',
+        
+        
     ];
 
     
