@@ -27,6 +27,7 @@ class HotelController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'ville' => 'required',
             'pays' => 'required',
+            'prix' => 'required|float',
             'description' => 'required',
             'nbre_etoiles' => 'required|integer'
         ]);
@@ -64,6 +65,7 @@ class HotelController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'ville' => 'required',
             'pays' => 'required',
+            'prix' => 'required|float',
             'description' => 'required',
             'nbre_etoiles' => 'required|integer'
         ]);

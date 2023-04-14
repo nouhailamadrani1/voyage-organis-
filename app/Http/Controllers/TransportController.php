@@ -30,6 +30,7 @@ class TransportController extends Controller
             'heure_arrivee'  => 'required ',
             'nombre_passagers'  => 'required',
             'prix'  => 'required',
+            'description' => 'required',
             'image'=>'required'
         ]);
 
