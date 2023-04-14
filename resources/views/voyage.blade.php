@@ -18,7 +18,7 @@
 
   @foreach ($voyages as $voyage)
       
-
+  
   <div class="card m-1 shadow-lg" style="width: 18rem;">
       <img src="images/{{ ($voyage->image) }}" class="card-img-top" alt="...">
       <div class="card-body">
@@ -34,11 +34,66 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body d-flex justify-content-between flex-wrap  ">
-            <div class="w-50  p-2">   <form class="w-100">
-            <h5>réservation</h5>
-
+            <div class="w-50  p-2 shadow bg-white">   <form class="w-100">
+            <h5 class="text-center">réservation</h5>
+           
+            <label class="form-label fw-semibold">Nom</label>
+            <input class="form-control" type="text" value="{{ Auth::user()->name }}" name="clientNom"  aria-label="Disabled input example" disabled readonly>
+            <label class="form-label fw-semibold">Email</label>
+            <input class="form-control" type="text" value="{{ Auth::user()->email }}" name="clientEmail"  aria-label="Disabled input example" disabled readonly>
+            <label class="form-label fw-semibold">Hotel</label>
+            <input class="form-control" type="text" value="{{$voyage->hotel->nom}}" name="hotel_nom"  aria-label="Disabled input example" disabled readonly>
+            <label class="form-label fw-semibold">Chamber</label>
+            <select class="form-select mb-3" name="chamber_id">
+              @foreach ($hotels as $hotel)
+                  
              
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <option value="{{ $hotel->id }}">{{  $hotel->nom }}</option>
+              @endforeach
+            </select>
+            <div class="mb-3 mx-1">
+              <label for="exampleFormControlInput1" class="form-label fw-semibold">Pays</label>
+              <input type="text" class="form-control " name="pays" value="{{$voyage->pays}}" disabled readonly>
+            </div>
+            <div  class="d-flex justify-content-evenly">
+              <div class="mb-3 mx-1">
+                  <label for="exampleFormControlInput1" class="form-label fw-semibold">De puis</label>
+                  <input type="text" class="form-control " name="depuis" value="{{$voyage->depuis}}" disabled readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label fw-semibold">Pour</label>
+                  <input type="text" class="form-control " name="pour" value=" {{$voyage->pour}}" disabled readonly>
+                </div>
+             </div>
+            <div  class="d-flex justify-content-evenly">
+              <div class="mb-3 mx-1">
+                  <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de départ</label>
+                  <input type="date" class="form-control " name="date_de_départ" value="{{$voyage->date_de_départ}}" disabled readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de l'arrivee</label>
+                  <input type="date" class="form-control " name="date_arrivee" value="{{$voyage->date_arrivee}}" disabled readonly>
+                </div>
+             </div>
+             <div  class="d-flex justify-content-evenly">
+              <div class="mb-3 mx-1">
+                  <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de départ</label>
+                  <input type="time" class="form-control " name="heure_de_départ" value="{{$voyage->heure_de_départ}}" disabled readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de l'arrivee</label>
+                  <input type="time" class="form-control " name="heure_arrivee" value="{{$voyage->heure_arrivee}}" disabled readonly>
+                </div>
+             </div>
+             <div class="d-flex justify-content-between p-2 mt-3 border shadow border-2 align-items-center"><div>
+              <h6>Prix Hotel : 600 DH</h6>
+              <h6>Prix Tronsport : 700DH</h6>
+              <h6>Prix Agence : 300DH</h6>
+             
+            </div> <h5> Prix Total :    1300  DH</h5></div>
+             
+            <button type="submit" class="btn btn-primary mt-4  d-flex align-items-center">réserve</button>
+      
             </form>
              </div>
             <div class="w-50 p-2  "> 
