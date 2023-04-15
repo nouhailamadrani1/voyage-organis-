@@ -13,7 +13,7 @@ class ReservationController extends Controller
     {
         $reservations = Reservation::all();
       
-        return view('reservationDashboard', compact('reservation'));
+        return view('reservationDashboard', compact('reservations'));
     }
     public function store(Request $request)
     {
