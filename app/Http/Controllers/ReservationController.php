@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
+   
+    public function index()
+    {
+        $reservations = Reservation::all();
+      
+        return view('reservationDashboard', compact('reservation'));
+    }
     public function store(Request $request)
     {
         $reservation = new Reservation([
