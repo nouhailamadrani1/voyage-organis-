@@ -17,7 +17,7 @@
       
       <nav class=" navbar navbar-expand-lg bg-white ">
         <div class="container-fluid ">
-          <a class="navbar-brand" href="#"><img src="logo.png" alt="" style="width: 50px ; hight: 50px"></a>
+          <a class="navbar-brand fst-italic" href="#"><img src="logo.png" alt="" style="width: 50px ; hight: 50px ; "><b></b></b></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -87,9 +87,7 @@
               <li class=" m-1 list-group-item "><img src="https://img.icons8.com/ios-filled/20/228BE6/car.png"/><a  href="{{route('transports.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Tronsport</a></li>
               <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/medium-logo.png"/><a href="{{route('blogDashboard.index')}}"  class=" mx-2 text-decoration-none text-black fs-6">Blog</a></li>
               <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="{{route('voyageDashboard.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Voyage Organisé</a></li>
-              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="{{route('reservation.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Réservation</a></li>
-              <li class=" m-1 list-group-item"><img src="https://img.icons8.com/ios-filled/20/228BE6/sunbathe.png"/><a href="{{route('voyageDashboard.index')}}" class=" mx-2 text-decoration-none text-black fs-6">Clients</a></li>
-
+              
 
 
           </ul>
@@ -101,14 +99,5 @@
     <main class="">
         @yield('content')
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-
-    <script>tinymce.init({
-      selector: '.tinymce',
-      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-      toolbar_mode: 'floating',
-      toolbar: 'undo redo | bold italic underline | fontselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | link image',
-      image_caption: true,
-      image_title: true
-  });</script>
+  
 </body></html>

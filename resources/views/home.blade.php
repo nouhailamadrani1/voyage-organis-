@@ -4,7 +4,18 @@
 
 <div class="m-0 p-0">
  
+  
+  <div class="d-flex align-items-center d-flex justify-content-between  mx-4 " >
+    <img src="img/cover13.png" alt="" srcset="" style="width: 400px">
+    <div class="px-4">
+      <h3 class="text-dark text-center p-2 ">Voyage <span class="p-1" style="background: white; color:rgb(246, 167, 2)">Organisés</span></h3>
+      <h5 class="text-center">Nous travaillons en étroite collaboration avec les meilleurs</h5>
+      <p class="text-center"> prestataires de services de voyage pour vous offrir 
+        des solutions complètes et personnalisées, qui comprennent la réservation de vols, d'hôtels, 
+        de transferts, d'activités et de visites guidées.</p>
+    </div>
    
+  </div>
        
 
         </div>

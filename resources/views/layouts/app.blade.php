@@ -29,28 +29,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav m-0">
-                        <div class="container-fluid p-2 ">
-        
-                            <ul class="d-flex justify-content-center flex-wrap  list-inline ">
-                              <li class=" ">
-                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="{{route('home')}}"><b>Accueil</b></a>
-                              </li>
-                              <li class="">
-                                <a class="nav-link px-3 py-1 mx-3 text-dark" href="{{route('articles.index')}}"><b>Blog</b></a>
-                              </li>
-                              <li class="">
-                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="{{route('hotels')}}"><b>Hotel</b></a>
-                              </li>
-                              <li class="">
-                                <a class="nav-link px-3 py-1  mx-3 text-dark" href="{{route('transportClient')}}"><b>Tronsport</b></a>
-                              </li>
-                              <li class="">
-                                <a class="nav-link px-3 py-1 mx-3 text-dark" href="{{route('voyageOrganise')}}"><b>Voyage Organisés</b></a>
-                              </li>
-                            </ul>
-                          </div>
-                    </ul>
+                   
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -68,13 +47,20 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown text-dark ">
-                               
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle fst-italic" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:rgb(13, 111, 229);">
-                                    <img src="images/{{Auth::user()->image}} " class="rounded-circle " alt="" style="width: 50px ; hight: 50px">
-                                  <b class="text-dark">{{ Auth::user()->name }}</b>
-
+                        <li class="align-items-center d-flex justify-content-end">
+                            <a class="mx-1 text-decoration-none fw-semibold text-dark"> About</a>
+                            <a class="mx-2 text-decoration-none fw-semibold text-dark">Contact</a>
+                        </li>
+                            <li class=" "> 
+                                <a  >
+                                    <img src="https://img.icons8.com/ios/50/null/search--v1.png" class="rounded bg-body-tertiary p-2 mx-2 " style="width: 40px ; hight: 40px"/>
                                 </a>
+                            <a  >
+                                <img src="https://img.icons8.com/ios/50/null/appointment-reminders--v1.png" class="rounded bg-body-tertiary p-2 mx-2 " style="width: 40px ; hight: 40px"/>
+                            </a>
+                         <a>   <img src="images/{{Auth::user()->image}} " class="rounded mx-2 " alt="" style="width: 40px ; hight: 40px">
+                         </a>
+                            </li>
 
                                 <div class="dropdown-menu dropdown-menu-end  text-dark " aria-labelledby="navbarDropdown">
                                     <a class="text-decoration-none px-3 text-dark " href="{{ route('logout') }}"
@@ -95,7 +81,28 @@
         </nav>
 
 
-
+ <ul class="m-0 ">
+                      
+        
+                            <ul class=" mx-4 nav nav-pills nav-fill gap-2 p-1 small text-dark bg-white rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-dark); --bs-nav-pills-link-active-color: var(--bs-white); --bs-nav-pills-link-active-bg: var(--bs-warning);">
+                              <li class="nav-item" role="presentation">
+                                <a  class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true" href="{{route('home')}}"> <img src="https://img.icons8.com/ios/15/null/home--v1.png" class="px-1"/>Accueil</a>
+                              </li>
+                              <li class="nav-item" role="presentation">
+                                <a class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false" href="{{route('articles.index')}}"><img src="https://img.icons8.com/ios/15/null/blogger.png" class="px-1"/>Blog</a>
+                              </li>
+                              <li class="nav-item" role="presentation">
+                                <a class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false" href="{{route('hotels')}}"> <img src="https://img.icons8.com/ios-filled/15/null/5-star-hotel--v2.png" class="px-1"/>Hotel</a>
+                              </li>
+                              <li class="nav-item" role="presentation">
+                                <a  class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false" href="{{route('transportClient')}}"><img src="https://img.icons8.com/ios-filled/15/null/airport-transfer.png" class="px-1"/>Tronsport</a>
+                              </li>
+                              <li class="nav-item" role="presentation">
+                                <a  class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false" href="{{route('voyageOrganise')}}"><img src="https://img.icons8.com/ios-filled/15/null/around-the-globe.png" class="px-1"/>Voyage Organisés</a>
+                              </li>
+                            </ul>
+                         
+                    </ul>
 
         
         <main class="">
