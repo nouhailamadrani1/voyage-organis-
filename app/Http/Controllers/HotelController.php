@@ -102,4 +102,21 @@ class HotelController extends Controller
         $hotels = Hotel::all();
         return view('hotelHome', compact('hotels'));
     }
+    public function indexHome(Request $request)
+    {
+        $searchTerm = $request->input('search');
+        $query = Hotel::query();
+        
+        if (!empty($searchTerm)) {
+            $query->where('nom', 'like', '%'.$searchTerm.'%');
+        }
+        
+         
+    $hotels = $query->paginate(4);
+        
+        return view('home', [
+            'hotels' => $hotels,
+            'searchTerm' => $searchTerm
+        ]);
+    }
 }

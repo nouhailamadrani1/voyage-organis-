@@ -16,7 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body class="m-0 p-0">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white m-0 p-0 ">
             <div class="container">
@@ -53,7 +53,7 @@
                         </li>
                             <li class=" "> 
                                 <a  >
-                                    <img src="https://img.icons8.com/ios/50/null/search--v1.png" class="rounded bg-body-tertiary p-2 mx-2 " style="width: 40px ; hight: 40px"/>
+                                    <img src="https://img.icons8.com/ios/50/null/search--v1.png" class="rounded  p-2 mx-2 " style="width: 40px ; hight: 40px ; " />
                                 </a>
                             <a  >
                                 <img src="https://img.icons8.com/ios/50/null/appointment-reminders--v1.png" class="rounded bg-body-tertiary p-2 mx-2 " style="width: 40px ; hight: 40px"/>
@@ -86,7 +86,7 @@
         
                             <ul class=" mx-4 nav nav-pills nav-fill gap-2 p-1 small text-dark bg-white rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-dark); --bs-nav-pills-link-active-color: var(--bs-white); --bs-nav-pills-link-active-bg: var(--bs-warning);">
                               <li class="nav-item" role="presentation">
-                                <a  class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true" href="{{route('home')}}"> <img src="https://img.icons8.com/ios/15/null/home--v1.png" class="px-1"/>Accueil</a>
+                                <a  class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true" href="{{route('indexHome')}}"> <img src="https://img.icons8.com/ios/15/null/home--v1.png" class="px-1"/>Accueil</a>
                               </li>
                               <li class="nav-item" role="presentation">
                                 <a class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false" href="{{route('articles.index')}}"><img src="https://img.icons8.com/ios/15/null/blogger.png" class="px-1"/>Blog</a>
@@ -105,7 +105,7 @@
                     </ul>
 
         
-        <main class="">
+        <main class=" m-0 p-0">
             @yield('content')
         </main>
     </div>

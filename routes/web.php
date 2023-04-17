@@ -54,3 +54,4 @@
     Route::resource('voyageDashboard', VoyageController::class);
     Route::get('/voyageOrganise',[VoyageController::class ,'showHome'])->name('voyageOrganise');
     Route::resource('reservation', ReservationController::class);
+    Route::get('/indexHome',[HotelController::class ,'indexHome'])->name('indexHome');
