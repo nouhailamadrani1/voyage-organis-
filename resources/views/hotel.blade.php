@@ -1,8 +1,8 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="m-0 p-0">
-    <div class="d-flex justify-content-center px-3 " >
+<div class="mb-5 p-0 ">
+    <div class="d-flex justify-content-center px-3  " >
         <h5>Bienvenue  <b style="color:rgb(13, 111, 229);">Nouhaila</b> sur votre Dashboard !!</h5>
         </div>
        <div class="d-flex justify-content-center flex-wrap">
@@ -11,8 +11,8 @@
             <h6 class="d-flex justify-content-center text-primary p-2">Les Hotels</h6>
             <div class="hr border border-primary border-1 	"></div>
             <div class="table-responsive">
-              <form action="{{ route('hotel.index') }}" method="GET" class="d-flex justify-content-between m-2">
-                <input type="text" class="form-control " name="search" value="{{ $searchTerm }}" placeholder="chercher par nom hôtel">
+              <form action="{{ route('indexHome') }}" method="GET" class="d-flex justify-content-between m-2">
+                <input type="text" class="form-control " name="search" value="{{ $searchTerm }}" placeholder="cherch par nom de hotel ">
                 <button type="submit" class="btn btn-white text-primary">Search</button>
             </form>
             <table class="table ">

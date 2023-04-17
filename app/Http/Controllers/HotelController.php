@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Hotel;
+use App\Models\Transport;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
@@ -107,16 +108,26 @@ class HotelController extends Controller
         $searchTerm = $request->input('search');
         $query = Hotel::query();
         
+
         if (!empty($searchTerm)) {
-            $query->where('nom', 'like', '%'.$searchTerm.'%');
+            $query->where('ville', 'like', '%'.$searchTerm.'%');
         }
         
          
     $hotels = $query->paginate(4);
+    $searchTerm = $request->input('search');
+    $query = Transport::query();
+
+    if (!empty($searchTerm)) {
+        $query->where('nom', 'like', '%'.$searchTerm.'%');
+    }
+     $transports = $query->paginate(4);
+    
         
         return view('home', [
             'hotels' => $hotels,
-            'searchTerm' => $searchTerm
+            'searchTerm' => $searchTerm,
+            'transports' => $transports
         ]);
     }
 }
