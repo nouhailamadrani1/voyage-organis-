@@ -11,6 +11,7 @@
          
             <h6 class="d-flex justify-content-center text-danger p-2">reservation</h6>
             <div class="hr border border-danger border-1 	"></div>
+            
             <table class="table ">
              
                 <thead>

@@ -7,10 +7,23 @@ use Illuminate\Http\Request;
 
 class TransportController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $transports = Transport::all();
-        return view('transport', compact('transports'));
+
+         $searchTerm = $request->input('search');
+        $query = Transport::query();
+
+        if (!empty($searchTerm)) {
+            $query->where('nom', 'like', '%'.$searchTerm.'%');
+        }
+         $transports = $query->get();
+        
+
+        return view('transport', [
+
+            'transports' => $transports,
+            'searchTerm' => $searchTerm
+        ]);
     }
 
     public function create()

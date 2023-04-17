@@ -11,7 +11,10 @@
             <h6 class="d-flex justify-content-center text-danger p-2">Les Tronsports</h6>
             <div class="hr border border-danger border-1 	"></div>
             <table class="table ">
-             
+              <form action="{{ route('transports.index') }}" method="GET" >
+               <div class="d-flex justify-content-center m-2"> <input type="text" class="form-control  " name="search" value="{{ $searchTerm }}" placeholder="chercher par nom hôtel">
+                <button type="submit" class="btn btn-white text-danger">Search</button></div>
+            </form>
                 <thead>
                   <tr>
                     <th scope="col">#</th>
