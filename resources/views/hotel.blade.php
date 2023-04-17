@@ -10,6 +10,11 @@
          
             <h6 class="d-flex justify-content-center text-primary p-2">Les Hotels</h6>
             <div class="hr border border-primary border-1 	"></div>
+            <div class="table-responsive">
+              <form action="{{ route('hotel.index') }}" method="GET" class="d-flex justify-content-between m-2">
+                <input type="text" class="form-control " name="search" value="{{ $searchTerm }}" placeholder="chercher par nom hôtel">
+                <button type="submit" class="btn btn-white text-primary">Search</button>
+            </form>
             <table class="table ">
              
                 <thead>
@@ -59,6 +64,7 @@
               
                 </tbody>
               </table>
+            </div>
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">

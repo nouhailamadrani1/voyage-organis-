@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 
 class HotelController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $hotels = Hotel::all();
-      
-        return view('hotel', compact('hotels'));
+        $searchTerm = $request->input('search');
+        $query = Hotel::query();
+        
+        if (!empty($searchTerm)) {
+            $query->where('nom', 'like', '%'.$searchTerm.'%');
+        }
+        
+        $hotels = $query->get();
+        
+        return view('hotel', [
+            'hotels' => $hotels,
+            'searchTerm' => $searchTerm
+        ]);
     }
   
     public function create()
