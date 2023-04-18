@@ -73,27 +73,7 @@
     <img src="img/coverblog.png"/>
 </div>
     </div>
-    {{-- <img src="img/hele1.jpg" class="img-fluid" alt="...">
-
-    <div class="col-sm-12  d-flex justify-content-center flex-warp px-3" style="margin-block-start: -16%">
-        <div>
-            <div class="w-100 p-3">
-                <h5 class="text-warning">Bienvenue sur notre page de blog de voyage ! </h5>
-
-            </div>
-            <div class=" shadow w-100 card  p-2 d-flex justify-content-center" style="background:rgb(255, 213, 10)">
-                <form class="d-flex align-items-center" role="search">
-
-                    <label class="w-25 mx-2">Chercher </label>
-                    <input class="form-control mx-2" type="search" placeholder="Nom de ville" aria-label="Search">
-                    <button class="btn btn-white mx-2  fs-5 " type="submit"><img src="https://img.icons8.com/ios-filled/25/228BE6/search--v1.png"/></button>
-                </form>
-            </div>
-            <p class="text-warning"><b>Nous sommes heureux de partager avec vous notre passion pour les voyages et
-                    les aventures à travers le monde.</b>
-            </p>
-        </div>
-    </div> --}}
+  
     <div class="mt-5">
 
         <div class=" my-5   d-flex justify-content-center flex-wrap ">
