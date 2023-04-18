@@ -116,7 +116,7 @@
     </div>
   
         
-                                                       <div class="mx-4 " style="background-color: #E21818 ">
+                                                       <div class="mx-4 ">
                                                     <h4 class="d-flex justify-content-center w-100 text-white py-4">Profiter </h4>
                                                  <h4 class="d-flex justify-content-center w-100 text-white">Voyager avec nous c'est profiter de :</h4>
                                                  <p class="d-flex justify-content-center w-100  fst-italic text-white ">En tant qu'agence de voyage, nous pouvons vous offrir une expérience

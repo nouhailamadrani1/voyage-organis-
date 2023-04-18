@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+<style>.card-price {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  padding: 10px;
+  background-color: E21818;
+  font-weight: bold;
+}</style>
 @section('content')
 
 <div class="m-0 p-0" style="background: #00235B">
@@ -41,34 +48,46 @@
     </div>
     <img src="img/333.jpg" alt="">
 </div>
-<h4 class="text-center text-white">NOS BONS PLANS DU MOMENT</h4>
+<h4 class="text-center text-white my-3">NOS BONS PLANS DU MOMENT</h4>
 
 <section class="d-flex justify-content-center flex-wrap p-2"> 
   @foreach ($voyages as $voyage)
  
-      
-  
-  <div class="card m-1 shadow-lg" style="width: 18rem;">
-      <img src="images/{{ ($voyage->image) }}" class="card-img-top" alt="...">
+  {{--  --}}
+  <div class="card border border-white border-4" style="width: 18rem">
+    <img src="images/{{ $voyage->image }}" class="card-img-top"  alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ $voyage->Titre }}</h5>
+        <p class="card-text">
+          <p class=" my-3  card-price text-white">{{$voyage->hotel->prix + $voyage->transport->prix + $voyage->prix}} DH</p>
+            <p class=" my-5 card-price bg-warning text-white"><b>Ville :</b> {{ $voyage->pour }}</p>
+       
+        </p>
+        <button class="btn btn m-0 border-warning border-4 text-white" type="button" style="background: #00235B" data-bs-toggle="offcanvas" data-bs-target="#{{ $voyage->id }}" aria-controls="offcanvasTop">Découvrir le voyage</button>
+    </div>
+</div>
+ 
+  {{--  --}}
+      {{-- <img src="images/{{ ($voyage->image) }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title my-3"> <b>{{ $voyage->Titre }}</b></h5>
     
         <p class="fw-light my-0"><b>Ville:</b> {{ $voyage->pour }}</p>
         <p class="fw-light my-0"><b>Prix:</b> {{ $voyage->prix }}DH</p>
-        <button class="btn btn-primary"  type="button" data-bs-toggle="offcanvas" data-bs-target="#{{ $voyage->id }}" aria-controls="offcanvasTop">Voir plus</button>
+        <button class="btn btn-primary"  type="button" data-bs-toggle="offcanvas" data-bs-target="#{{ $voyage->id }}" aria-controls="offcanvasTop">Voir plus</button> --}}
 
         <div class="offcanvas offcanvas-top h-100"tabindex="-1" id="{{ $voyage->id }}" aria-labelledby="offcanvasTopLabel">
           <div class="offcanvas-header">
             <a class=" d-flex " href="{{ url('/') }}">
               <img src="images/{{Auth::user()->image}} " class="rounded mx-2 " alt="" style="width: 40px ; hight: 40px">
               <li class="align-items-center d-flex justify-content-between ">
-                <a class="mx-1 text-decoration-none fw-semibold text-dark"> About </a>
+                <a class="mx-1 text-decoration-none fw-semibold text-dark" href="#aboutvoyage"> About </a>
                 <span class="px-2">/ </span>
-                <a class="mx-2 text-decoration-none fw-semibold text-dark">Transport</a>
+                <a class="mx-2 text-decoration-none fw-semibold text-dark" href="#transp">Transport</a>
                 <span class="px-2">/ </span>
-                <a class="mx-2 text-decoration-none fw-semibold text-dark">Hotel</a>
+                <a class="mx-2 text-decoration-none fw-semibold text-dark" href="#hote">Hotel</a>
                 <span class="px-2">/ </span>
-                <a class="mx-2 text-decoration-none fw-semibold text-dark">reservation</a>
+                <a class="mx-2 text-decoration-none fw-semibold text-dark" href="#reserve">reservation</a>
    
             </li>
           </a>
@@ -80,7 +99,7 @@
           <div class="offcanvas-body d-flex justify-content-between flex-wrap   " style="background: #00235B" >
           
             <div class="m-0 d-flex justify-content-center flex-wrap w-100  "> 
-      <div class="d-flex justify-content-center flex-wrap border-2 border my-2 border-warning  w-75 shadow bg-white"  >
+      <div class="d-flex justify-content-center flex-wrap border-2 border my-2 border-warning  w-75 shadow bg-white " id="aboutvoyage" >
        
         <div class="h4 pb-2 mb-4  border-2 border-bottom border-warning">
           <h5 class="my-2 p-2" style="color: #f52222" > {{ $voyage->titre }}</h5>
@@ -92,7 +111,7 @@
          
        </div>
     
-        <div class=" shadow text-start p-2 border-2 border border-warning my-2 w-75 bg-white ">
+        <div class=" shadow text-start p-2 border-2 border border-warning my-2 w-75 bg-white " id="transp">
           <h4 class="my-2"  ><b>{{$voyage->transport->nom}}</b></h4>
           <div class=" ">
             <p class="btn btn-warning mx-1 "><img src="https://img.icons8.com/ios/20/null/air-conditioner.png"/> Climatisation </p><p class=" btn btn-warning mx-1"><img src="https://img.icons8.com/material-outlined/20/null/plug.png"/> Prise</p>
@@ -111,7 +130,7 @@
                 <img src="images/{{$voyage->transport->image}}" style="width: 40%" alt="">
           </div>
         </div>
-        <div class=" card my-2 p-2 d-flex justify-content-center  border-2 border border-warning w-75 bg-white shadow ">
+        <div class=" card my-2 p-2 d-flex justify-content-center  border-2 border border-warning w-75 bg-white shadow " id="hote">
           <h4 class="card-title text center">{{$voyage->hotel->nom}}</b><span><img  class="" src="https://img.icons8.com/3d-fluency/20/null/star.png"/>({{$voyage->hotel->nbre_etoiles}}) </span> </h5>
 
           <div class="d-flex">
@@ -134,7 +153,7 @@
 </div></div>
   {{--  --}}
   <div class="  p-2 shadow bg-white d-flex justify-content-center w-100 my-3 b border-3 border border-warning">  
-    <form  method="POST"  class="w-100 my-2 p-3" action="{{ route('reservation.store') }}" enctype="multipart/form-data">
+    <form  method="POST" id="reserve"  class="w-100 my-2 p-3" action="{{ route('reservation.store') }}" enctype="multipart/form-data">
       @csrf
     <h5 class="text-center">réservation</h5>
     <input type="hidden" value="{{ Auth::user()->id }}" name="client_id">

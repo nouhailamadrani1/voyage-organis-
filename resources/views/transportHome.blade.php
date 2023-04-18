@@ -68,7 +68,7 @@
       
           <p class="fw-light my-0"><b>Nombre passagers:</b> {{ $transport->nombre_passagers }}</p>
           
-          <a href="#" class="btn btn-warning shadow-lg  my-2 rounded d-flex justify-content-center">réservez votre place</a>
+        
         </div>
       </div>
       @endforeach
