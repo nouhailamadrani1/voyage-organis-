@@ -1,14 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-
+<ul class="mx-4 nav nav-pills  nav-fill gap-2 p-1 small text-dark bg-white rounded-5 shadow-sm mt-5  fixed-top" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-dark); --bs-nav-pills-link-active-color: var(--bs-white); --bs-nav-pills-link-active-bg: var(--bs-warning);">
+  <li class="nav-item" >
+      <a class="nav-link active rounded-5" href="{{ route('indexHome') }}">
+          <img src="https://img.icons8.com/ios/15/null/home--v1.png" class="px-1"/>Accueil
+      </a>
+  </li>
+  <li class="nav-item" >
+      <a class="nav-link rounded-5"  href="{{ route('articles.index') }}">
+          <img src="https://img.icons8.com/ios/15/null/blogger.png" class="px-1"/>Blog
+      </a>
+  </li>
+  <li class="nav-item" >
+      <a class="nav-link rounded-5"  href="{{ route('hotels') }}">
+          <img src="https://img.icons8.com/ios-filled/15/null/5-star-hotel--v2.png" class="px-1"/>Hotel
+      </a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link rounded-5"  href="{{ route('transportClient') }}">
+          <img src="https://img.icons8.com/ios-filled/15/null/airport-transfer.png" class="px-1"/>Transport
+      </a>
+  </li>
+  <li class="nav-item" >
+      <a class="nav-link rounded-5"  href="{{ route('voyageOrganise') }}">
+          <img src="https://img.icons8.com/ios-filled/15/null/around-the-globe.png" class="px-1"/>Voyages Organisés
+      </a>
+  </li>
+</ul>
 <div class="m-0 p-0" style="background: #00235B">
 
   
   <div class="d-flex align-items-end justify-content-center flex-wrap px-5 m-0 py-4 w-100  " >
     <img src="img/cover13.png" alt="" class="" srcset="" style="width: 270px">
     <div class="px-4 w-75">
-      <h4 class="text-white text-start p-2 ">Voyage <span class="p-1" style="background-color:#E21818 ; color:white">Organisés</span></h4>
+      {{-- <h4 class="text-white text-start p-2 ">Voyage <span class="p-1" style="background-color:#E21818 ; color:white">Organisés</span></h4> --}}
       <h4 class="text-white text-start p-4  ">Voyage <span class="p-1" style="background-color:#E21818 ; color:white">Organisés</span></h4>
 
       <h5 class="text-start fw-lighter text-white">Nous travaillons en étroite collaboration avec les meilleurs</h5>
@@ -30,7 +56,7 @@
     </div>
    
   </div>
-  <div class="bg-warning my-5 pt-5 mx-4">
+  <div class=" my-5 pt-5 mx-4" style="background: #FFDD83">
     <h4 class="text-center text-white pt-2 ">Les Hotels</h4>
     <h6 class="text-center  text-white fst-italic" > Nous avons rassemblé une liste complète d'hôtels de qualité dans différentes destinations, pour répondre à tous les goûts et à tous les budgets!</h6>
     <section class="d-flex justify-content-center  flex-wrap p-2"> 
@@ -96,7 +122,7 @@
                                                  <p class="d-flex justify-content-center w-100  fst-italic text-white ">En tant qu'agence de voyage, nous pouvons vous offrir une expérience
                                                      de voyage unique et mémorable, avec de nombreux avantages pour les voyageurs. </p>
                                                     
-                                                 <div class=" d-flex justify-content-center m-0 row" >
+                                                 <div class=" d-flex justify-content-center flex-wrap m-0 row" >
                                                     <div class="p-2 d-flex flex-column align-items-center col-3" >
                                                         <img class="rounded-circle "  src="/img/money.jpg" style="width: 60%; "/>
                                                         <p  class="fw-bold text-white">  Meilleur Prix garanti</p>
@@ -119,7 +145,7 @@
 
                                              
 
-<div class="my-5 bg-warning  mx-4">
+<div class="my-5   mx-4"  style="background: #FFDD83">
               
                                                 <h4 class="text-center text-white pt-2">Transport Touristique</h4>
                                                 <h6 class="text-center  text-white fst-italic" >Choisissez parmi notre large gamme, le véhicule le mieux adapté à vos besoins et à votre budget</h6>   
@@ -203,6 +229,73 @@
     </div>
   </div>
                                               </div>
+                                              <footer class=" text-center fw-medium text-lg-start   " style="background: #98DFD6">
+                                                <div class="container p-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                                                   
+                                              
+                                                      <img src="logo.png" alt="" style="width: 200px ; hight: 200px">
+                                                      <p></p>
+                                                       
+                                                    </div>
+                                              
+                                                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                                                      <h5 class="text-uppercase">Liens utiles</h5>
+                                              
+                                                      <ul class="list-unstyled mb-0">
+                                                        <li>
+                                                            <a class="nav-link rounded-5 p-1"  href="{{ route('voyageOrganise') }}">
+                                                                <img src="https://img.icons8.com/ios-filled/20/null/around-the-globe.png" class="px-1"/>Voyages Organisés
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="nav-link rounded-5 p-1"  href="{{ route('transportClient') }}">
+                                                                <img src="https://img.icons8.com/ios-filled/20/null/airport-transfer.png" class="px-1"/>Transport
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="nav-link rounded-5 p-1"  href="{{ route('hotels') }}">
+                                                                <img src="https://img.icons8.com/ios-filled/20/null/5-star-hotel--v2.png" class="px-1"/>Hotel
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="nav-link rounded-5 p-1"  href="{{ route('articles.index') }}">
+                                                                <img src="https://img.icons8.com/ios/20/null/blogger.png" class="px-1"/>Blog
+                                                            </a>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                              
+                                                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                                                      <h5 class="text-uppercase">Contactez-nous</h5>
+                                              
+                                                      <ul class="list-unstyled text-start mb-0">
+                                                        <li class="d-flex align-items-center p-1">
+                                                            <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/20/null/external-map-map-and-navigation-kmg-design-glyph-kmg-design-3.png"/> Jardins de la Palmeraie, Marrakech, Maroc
+                                                        </li>
+                                                        <li class="d-flex align-items-center p-1">
+                                                          
+                                                            <img src="https://img.icons8.com/ios-filled/20/null/apple-mail.png"/>   voyageOrganise@nmvoyage.com
+                                                        </li>
+                                                        <li class="d-flex align-items-center p-1 ">
+                                                            <img src="https://img.icons8.com/external-flatart-icons-solid-flatarticons/20/null/external-call-contact-us-flatart-icons-solid-flatarticons.png"/>
+                                                          + 212 6 656 453 567
+                                                        </li>
+                                                        <li class="d-flex align-items-center p-1 ">
+                                                            <img src="https://img.icons8.com/external-icongeek26-glyph-icongeek26/20/null/external-phone-retro-80s-icongeek26-glyph-icongeek26-1.png"/>
+                                                         + 212 7 789 432 650
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              
+                                                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                                                  © 2023 Mon entreprise :
+                                                  <a class="text-dark" href="https://mdbootstrap.com/">NMouHil.com</a>
+                                                </div>
+                                              </footer>
           
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 <style></style>
