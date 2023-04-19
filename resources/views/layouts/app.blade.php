@@ -52,13 +52,14 @@
                             <a class="mx-2 text-decoration-none fw-semibold text-dark" href="#contact2">Contact</a>
                         </li>
                             <li class=" "> 
-                                <a  >
+                                <a   >
                                     <img src="https://img.icons8.com/ios/50/null/search--v1.png" class="rounded  p-2 mx-2 " style="width: 40px ; hight: 40px ; " />
                                 </a>
                             <a  >
                                 <img src="https://img.icons8.com/ios/50/null/appointment-reminders--v1.png" class="rounded bg-body-tertiary p-2 mx-2 " style="width: 40px ; hight: 40px"/>
                             </a>
-                         <a>   <img src="images/{{Auth::user()->image}} " class="rounded mx-2 " alt="" style="width: 40px ; hight: 40px">
+                         <a  href="/profileUser" >  
+                             <img src="images/{{Auth::user()->image}} " class="rounded mx-2 " alt="" style="width: 40px ; hight: 40px">
                          </a>
                             </li>
 

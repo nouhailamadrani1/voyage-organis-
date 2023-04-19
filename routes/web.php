@@ -1,7 +1,9 @@
 
 
- <?php
 
+ <?php
+    
+  
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\HomeController;
@@ -14,7 +16,10 @@
     use App\Http\Controllers\StatistiquesController;
     use App\Http\Controllers\VoyageController;
     use App\Http\Controllers\ReservationController;
-    
+    use App\Http\Controllers\UserController;
+    use App\Http\Controllers\Auth\ForgotPasswordController;
+    use App\Http\Controllers\Auth\ResetPasswordController;
+
 
     Route::get('/', function () {
         return view('welcome');
@@ -35,8 +40,8 @@
         return view('hotelHome');
     });
 
-    Route::get('/transportHome', function () {
-        return view('transportHome');
+    Route::get('/profileUser', function () {
+        return view('profile');
     });
          
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -55,3 +60,13 @@
     Route::get('/voyageOrganise',[VoyageController::class ,'showHome'])->name('voyageOrganise');
     Route::resource('reservation', ReservationController::class);
     Route::get('/indexHome',[HotelController::class ,'indexHome'])->name('indexHome');
+    Route::resource('profile', UserController::class);
+    
+    // Route::get('password/reset', ForgotPasswordController::class,'howLinkRequestForm')->name('password.request');
+
+    // Route::post('password/email', ForgotPasswordController::class ,'sendResetLinkEmail')->name('password.email');
+    
+    // Route::get('password/reset/{token}', ResetPasswordController::class , 'showResetForm')->name('password.reset');
+    
+    // Route::post('password/reset', ResetPasswordController::class ,'reset')->name('password.update');
+    Route::get('/forgot-password', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm');

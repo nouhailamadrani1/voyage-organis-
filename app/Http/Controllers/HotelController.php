@@ -115,7 +115,7 @@ class HotelController extends Controller
         
          
     $hotels = $query->paginate(4);
-    $searchTerm = $request->input('searchHotelD');
+    $searchTerm = $request->input('search');
     $query = Transport::query();
 
     if (!empty($searchTerm)) {
@@ -124,10 +124,10 @@ class HotelController extends Controller
      $transports = $query->paginate(4);
     
         
-     return redirect()->back([
-        'hotels' => $hotels,
-        'searchTerm' => $searchTerm,
-        'transports' => $transports
+        return view('home', [
+            'hotels' => $hotels,
+            'searchTerm' => $searchTerm,
+            'transports' => $transports
         ]);
     }
 }

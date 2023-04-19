@@ -16,7 +16,7 @@
                     
                     @auth
                     
-                        <a href="{{ url('/home') }}" class="text-decoration-none px-3 ">Home</a>
+                        <a href="{{ url('indexHome') }}" class="text-decoration-none px-3 ">Home</a>
                     @else
                     <div>
                         <a href="{{ route('login') }}" class="text-decoration-none px-3 btn btn-white text-info mx-2 shadow-sm border-bottom   bg-body-tertiary rounded" >Log in</a>
