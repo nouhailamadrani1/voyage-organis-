@@ -1,9 +1,9 @@
 
 @extends('layouts.sidebar')
 @section('content')
+<div class="container mx-2">
 
-
-     <div class="d-flex justify-content-center p-3" >
+     <div class="d-flex justify-content-center p-3 " >
   
      <h5>Bienvenue  <b style="color:rgb(13, 111, 229);">Nouhaila</b> sur votre Dashboard !!</h5>
      
@@ -65,7 +65,7 @@
           <th scope="col">#</th>
           <th scope="col">Nom</th>
           <th scope="col">Ville</th>
-          <th scope="col">Nbre etoiles</th>
+          
           <th scope="col">Image</th>
         </tr>
       </thead>
@@ -78,7 +78,6 @@
           <th scope="row">{{$hotel->id}}</th>
           <td>{{$hotel->nom}}</td>
           <td>{{$hotel->ville}}</td>
-          <td>{{$hotel->nbre_etoiles}}</td>
          
           <td><img src="images/{{$hotel->image}}" class="" alt="" style="width: 50px ; hight: 50px"></td>
 
@@ -90,7 +89,7 @@
   </div>
   <div>
   
-    <h4 class="my-1 d-flex justify-content-center p-3"> Publications</h4>
+    <h4 class="m- d-flex justify-content-center p-3 "> Publications</h4>
     <table class="table bg-primary bg-opacity-10">
       <thead>
         
@@ -180,18 +179,18 @@
   </div>
   
 </div>
-<div class="vr border border-primary border-1 	d-none d-lg-block"></div>
+{{-- <div class="vr border border-primary border-1 	d-none d-lg-block"></div>
 <div>
   
-<h5 class="pb-3 d-flex justify-content-center ">Les clients</h5>
-<div class="bg-info  bg-opacity-10 p-2  border border-primary border-2 rounded-4 shadow  ">
+<h5 class="pb-3 d-flex justify-content-center  ">Les clients</h5>
+<div class="bg-info  bg-opacity-10   border border-primary border-2 rounded-4 shadow  ">
   
 @foreach ($users as $user)
     
 
   <div class=" d-flex justify-content-start align-items-center  px-2">
     <img src="images/{{$user ->image}}" class="rounded-circle" alt="" style="width: 25px ; hight: 25px">
-    <h6 class="px-2  fst-italic">{{$user ->name}}</h6>
+    <h6 class="px-2  fst-italic">{{ Str::limit($user ->name,5) }}</h6>
   </div>
     <hr class=" border border-primary border-1">
     @endforeach
@@ -201,12 +200,12 @@
 </div>
       
  
-    
+     --}}
 
        
       
 
-
+</div>
 
   
         

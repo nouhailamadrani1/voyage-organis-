@@ -1,11 +1,11 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="m-0 p-0">
-    <div class="d-flex justify-content-center px-3 " >
-        <h5>Bienvenue  <b  class="text-warning">Nouhaila</b> sur votre Dashboard !!</h5>
+<div class="m-0 p-0   ">
+    <div class="d-flex justify-content-center mt-5 m-1 px-3 " >
+        <h5 class="mt-4">Bienvenue  <b  class="text-warning">{{Auth::user()->name}}</b> sur votre Dashboard !!</h5>
         </div>
-       <div class="d-flex justify-content-center flex-wrap">
+       <div class="d-flex justify-content-center p-4 flex-wrap flex-lg-nowrap">
         <div class=" p-1 m-3 bg-warning bg-opacity-10   border border-warning border-2 rounded-4 shadow  " >
          
             <h6 class="d-flex justify-content-center text-warning p-2">Les Blogs</h6>
@@ -28,7 +28,7 @@
                     @foreach ($articles as $article)
                     <th scope="row">{{$article->id}}</th>
                     <td>{{ $article->title }}</td>
-                    <td>{{ $article->description }} </td>
+                    <td>{{ Str::limit($article->description,20) }} </td>
                     <td><img  src="images/{{ ($article->image) }}" class="" alt="" style="width: 50px ; hight: 50px"></td>
                   <td></td>
                       <td class="d-flex">

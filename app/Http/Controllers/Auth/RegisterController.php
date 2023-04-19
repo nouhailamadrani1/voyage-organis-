@@ -27,26 +27,28 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
-            
+
         ]);
     }
 
-    protected function create(array $data) {
-        
+    protected function create(array $data)
+    {
+
         if (request()->hasFile('image')) {
             $image = request()->file('image');
             $destinationPath = 'images/';
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $postImage);
 
-           $data['image'] = "$postImage";
-        //   $image = request()->file('image')->getClientOriginalName();
-        //     request()->file('image')->storeAs('avatars', $image, 'public');
+            $data['image'] = "$postImage";
+            //   $image = request()->file('image')->getClientOriginalName();
+            //     request()->file('image')->storeAs('avatars', $image, 'public');
+        }
+        return User::create([
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'image'    => $data['image'],
+            'password' => Hash::make($data['password']),
+        ]);
     }
-    return User::create([
-        'name'     => $data['name'],
-        'email'    => $data['email'],
-        'image'    => $data['image'] ,
-        'password' => Hash::make($data['password']),
-    ]);
-}}
+}

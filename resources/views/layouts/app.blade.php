@@ -49,7 +49,7 @@
                         @else
                         <li class="align-items-center d-flex justify-content-end">
                             <a class="mx-1 text-decoration-none fw-semibold text-dark"> About</a>
-                            <a class="mx-2 text-decoration-none fw-semibold text-dark">Contact</a>
+                            <a class="mx-2 text-decoration-none fw-semibold text-dark" href="#contact2">Contact</a>
                         </li>
                             <li class=" "> 
                                 <a  >
@@ -68,7 +68,6 @@
                                                      document.getElementById('logout-form').submit();"><img src="https://img.icons8.com/ios-filled/20/0000/logout-rounded-left.png"/>
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -80,18 +79,9 @@
             </div>
         </nav>
 
-
- 
-
-        
-        <main class=" mt-5 pt-4">
+        <main class=" mt-5 pt-4 content">
             @yield('content')
         </main>
-       
     </div>
-
-
-
-    
 </body>
 </html>

@@ -199,6 +199,8 @@
           <input type="time" class="form-control " name="heure_arrivee" value="{{$voyage->heure_arrivee}}">
         </div>
      </div>
+     <div> </div>
+     <div> </div>
      <div class="d-flex justify-content-between p-2 mt-3 border shadow border-2 border-warning bg-warning bg-opacity-25 text-green  align-items-center"><div>
       <h6 class="my-2">Prix Hotel :{{$voyage->hotel->prix}} DH</h6>
       <h6 class="my-2">Prix Tronsport : {{$voyage->transport->prix}} DH</h6>

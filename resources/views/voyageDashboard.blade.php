@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="m-0 p-0">
-    <div class="d-flex justify-content-center px-3 " >
-        <h5>Bienvenue  <b style="color:rgb(13, 111, 229);">Nouhaila</b> sur votre Dashboard !!</h5>
+    <div class="d-flex justify-content-center px-3 mt-5 " >
+        <h5 class="mt-5">Bienvenue  <b style="color:rgb(13, 111, 229);">{{Auth::user()->name}}</b> sur votre Dashboard !!</h5>
         </div>
-       <div class="d-flex justify-content-center flex-wrap">
+       <div class="d-flex justify-content-center flex-wrap flex-lg-nowrap p-4 ">
         <div class=" p-1 m-3 bg-primary bg-opacity-10   border border-primary border-2 rounded-4 shadow shadow-primary " >
          
             <h6 class="d-flex justify-content-center text-primary p-2">Les Hotels</h6>
@@ -15,11 +15,9 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Titre</th>
+                 
                     <th scope="col">pour</th>
-                    <th scope="col">de puis</th>
                     <th scope="col">date de départ</th>
-                    <th scope="col">date de l'arrivee</th>
                     <th scope="col">Image</th>
                     <th scope="col">Action</th>
                    
@@ -34,10 +32,10 @@
                       
 
                     <th scope="row">{{$voyage->id}}</th>
-                    <td>{{$voyage->titre}}</td>
+                   
                     <td>{{$voyage->pour}}</td>
-                    <td>{{$voyage->depuis}}</td>
-                    <td>{{$voyage->date_de_départ}}</td>
+                   
+                   
                     <td>{{$voyage->date_arrivee}}</td>
 
             
@@ -102,31 +100,31 @@
                   <div  class="d-flex justify-content-evenly">
                     <div class="mb-3 mx-1">
                         <label for="exampleFormControlInput1" class="form-label fw-semibold">De puis</label>
-                        <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="depuis">
+                        <input type="text" class="form-control border border-warning border-2 rounded-4 shadow" name="depuis">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label fw-semibold">Pour</label>
-                        <input type="text" class="form-control border border-success border-2 rounded-4 shadow" name="pour">
+                        <input type="text" class="form-control border border-warning border-2 rounded-4 shadow" name="pour">
                       </div>
                    </div>
                    <div  class="d-flex justify-content-evenly">
                     <div class="mb-3 mx-1">
                         <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de départ</label>
-                        <input type="date" class="form-control border border-success border-2 rounded-4 shadow" name="date_de_départ">
+                        <input type="date" class="form-control border border-warning border-2 rounded-4 shadow" name="date_de_départ">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de l'arrivee</label>
-                        <input type="date" class="form-control border border-success border-2 rounded-4 shadow" name="date_arrivee">
+                        <input type="date" class="form-control border border-warning border-2 rounded-4 shadow" name="date_arrivee">
                       </div>
                    </div>
                    <div  class="d-flex justify-content-evenly">
                     <div class="mb-3 mx-1">
                         <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de départ</label>
-                        <input type="time" class="form-control border border-success border-2 rounded-4 shadow" name="heure_de_départ">
+                        <input type="time" class="form-control border border-warning border-2 rounded-4 shadow" name="heure_de_départ">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de l'arrivee</label>
-                        <input type="time" class="form-control border border-success border-2 rounded-4 shadow" name="heure_arrivee">
+                        <input type="time" class="form-control border border-warning border-2 rounded-4 shadow" name="heure_arrivee">
                       </div>
                    </div>
                    <div class="mb-3">
@@ -157,7 +155,7 @@
                   </select>
                     <div class="mb-3 m-2">
                 <label for="exampleFormControlInput1" class="form-label fw-semibold">Image</label>
-                <input type="file" class="form-control border border-success border-2 rounded-4 shadow" name="image">
+                <input type="file" class="form-control border border-warning border-2 rounded-4 shadow" name="image">
               </div>
                  
                  <div class="mb-3 mx-1">

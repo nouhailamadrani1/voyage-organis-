@@ -64,7 +64,7 @@
           <h5 class="card-title"><b>{{ $hotel->nom }}</b><span><img src="https://img.icons8.com/3d-fluency/20/null/star.png"/> ({{ $hotel->nbre_etoiles }})</span> </h5>
           <p class="fw-light"><b>Ville:</b>{{ ($hotel->ville) }} <b> Pays:</b>{{ ($hotel->pays) }}</p>
           <p class="fw-light text-justify" style="text-align:justify; "><b>Desciption:</b>{{ Str::limit($hotel->description,90) }}</p>
-          <a href="#" class="btn btn-warning shadow-lg  mb-3 rounded d-flex justify-content-center">Choisissez votre chambre</a>
+
         </div>
       </div>
     

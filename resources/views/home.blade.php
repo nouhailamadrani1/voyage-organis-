@@ -116,27 +116,27 @@
     </div>
   
         
-                                                       <div class="mx-4 ">
+                                                       <div class="mx-4 " style="background-color: #E21818 ">
                                                     <h4 class="d-flex justify-content-center w-100 text-white py-4">Profiter </h4>
-                                                 <h4 class="d-flex justify-content-center w-100 text-white">Voyager avec nous c'est profiter de :</h4>
+                                                 {{-- <h4 class="d-flex justify-content-center w-100 text-white">Voyager avec nous c'est profiter de :</h4> --}}
                                                  <p class="d-flex justify-content-center w-100  fst-italic text-white ">En tant qu'agence de voyage, nous pouvons vous offrir une expérience
                                                      de voyage unique et mémorable, avec de nombreux avantages pour les voyageurs. </p>
                                                     
-                                                 <div class=" d-flex justify-content-center flex-wrap m-0 row" >
-                                                    <div class="p-2 d-flex flex-column align-items-center col-3" >
-                                                        <img class="rounded-circle "  src="/img/money.jpg" style="width: 60%; "/>
+                                                 <div class=" d-flex justify-content-center flex-wrap m-0 " >
+                                                    <div class="p-2 d-flex flex-column align-items-center " >
+                                                        <img class="rounded-circle "  src="/img/money.jpg" style="width: 140px; "/>
                                                         <p  class="fw-bold text-white">  Meilleur Prix garanti</p>
                                                      </div>
-                                                     <div class="p-2 d-flex flex-column align-items-center col-3" >
-                                                        <img class="rounded-circle "  src="/img/uniqe.jpg" style="width: 60%; "/>
+                                                     <div class="p-2 d-flex flex-column align-items-center " >
+                                                        <img class="rounded-circle "  src="/img/uniqe.jpg" style="width: 140px; "/>
                                                         <p  class="fw-bold text-white">Une expérience de voyage unique </p>
                                                      </div>
-                                                     <div class="p-2 d-flex flex-column align-items-center col-3" >
-                                                        <img class="rounded-circle " src="/img/tronsport.jpg" style="width: 60%;" />
+                                                     <div class="p-2 d-flex flex-column align-items-center " >
+                                                        <img class="rounded-circle " src="/img/tronsport.jpg" style="width: 140px;" />
                                                         <p  class="fw-bold text-white"> Des transports de qualité</p>
                                                      </div>
-                                                     <div class="p-2 d-flex flex-column align-items-center col-3" >
-                                                        <img class="rounded-circle " src="/img/hotel.jpg" style="width: 60%; "  />
+                                                     <div class="p-2 d-flex flex-column align-items-center " >
+                                                        <img class="rounded-circle " src="/img/hotel.jpg" style="width: 140px; "  />
                                                         <p class="fw-bold text-white"> Des hébergements de qualité </p>
                                                      </div>
                                                  </div>
@@ -198,7 +198,7 @@
         </li>
     </ul></div>
 
-    <div class="d-flex justify-content-evenly flex-wrap">
+    <div class="d-flex justify-content-evenly flex-wrap "  id="contact2">
       <form class=" w-50">
         <div class=" d-flex justify-content-between">
           <div class="mb-3">  <h3 class="text-warning">Contactez-nous</h3></div>

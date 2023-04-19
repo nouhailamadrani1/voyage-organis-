@@ -2,17 +2,18 @@
 
 @section('content')
 <div class="m-0 p-0">
-    <div class="d-flex justify-content-center px-3 " >
-        <h5>Bienvenue  <b  class="text-danger">Nouhaila</b> sur votre Dashboard !!</h5>
+    <div class="d-flex justify-content-center px-3 mt-5 " >
+        <h5 class="mt-5">Bienvenue  <b  class="text-danger">{{Auth::user()->name}}</b> sur votre Dashboard !!</h5>
         </div>
-       <div class="d-flex justify-content-center flex-wrap">
+       <div class="d-flex justify-content-center  p-4 flex-wrap flex-lg-nowrap">
         <div class=" p-1 m-3 bg-dangerbg-opacity-10   border border-danger border-2 rounded-4 shadow  " >
          
             <h6 class="d-flex justify-content-center text-danger p-2">Les Tronsports</h6>
             <div class="hr border border-danger border-1 	"></div>
             <table class="table ">
               <form action="{{ route('transports.index') }}" method="GET" >
-               <div class="d-flex justify-content-center m-2"> <input type="text" class="form-control  " name="search" value="{{ $searchTerm }}" placeholder="chercher par nom hôtel">
+               <div class="d-flex justify-content-center  m-2"> 
+                <input type="text" class="form-control border border-2 border-danger " name="search" value="{{ $searchTerm }}" placeholder="chercher par nom hôtel">
                 <button type="submit" class="btn btn-white text-danger">Search</button></div>
             </form>
                 <thead>
@@ -96,7 +97,7 @@
           </div>
           <div class="mb-3 m-2">
             <label for="exampleFormControlTextarea1" class="form-label fw-semibold">Description</label>
-            <textarea  class="form-control border border-warning border-2 rounded-4 shadow" name="description" rows="3"></textarea>
+            <textarea  class="form-control border border-success border-2 rounded-4 shadow" name="description" rows="3"></textarea>
           </div>
              
              

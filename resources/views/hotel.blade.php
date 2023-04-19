@@ -1,18 +1,18 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="mb-5 p-0 ">
-    <div class="d-flex justify-content-center px-3  " >
-        <h5>Bienvenue  <b style="color:rgb(13, 111, 229);">Nouhaila</b> sur votre Dashboard !!</h5>
+<div class="m-0 p-0 ">
+    <div class="d-flex justify-content-center px-3 mt-5  " >
+        <h5 class="mt-5" >Bienvenue  <b style="color:rgb(13, 111, 229);">{{Auth::user()->name}}</b> sur votre Dashboard !!</h5>
         </div>
-       <div class="d-flex justify-content-center flex-wrap">
+       <div class="d-flex justify-content-center p-4 flex-wrap flex-lg-nowrap">
         <div class=" p-1 m-3 bg-primary bg-opacity-10   border border-primary border-2 rounded-4 shadow shadow-primary " >
          
             <h6 class="d-flex justify-content-center text-primary p-2">Les Hotels</h6>
             <div class="hr border border-primary border-1 	"></div>
             <div class="table-responsive">
               <form action="{{ route('indexHome') }}" method="GET" class="d-flex justify-content-between m-2">
-                <input type="text" class="form-control " name="search" value="{{ $searchTerm }}" placeholder="cherch par nom de hotel ">
+                <input type="text" class="form-control border border-2 border-primary" name="search" value="{{ $searchTerm }}" placeholder="cherch par nom de hotel ">
                 <button type="submit" class="btn btn-white text-primary">Search</button>
             </form>
             <table class="table ">
@@ -22,7 +22,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Ville</th>
-                    <th scope="col">N° Etoiles</th>
+                    <th scope="col">N°</th>
                     <th scope="col">Image</th>
                     <th scope="col">Action</th>
                    
@@ -61,7 +61,6 @@
                   </tr>
                              @endforeach
 
-              
                 </tbody>
               </table>
             </div>
@@ -116,7 +115,7 @@
                 <input type="file" class="form-control border border-warning border-2 rounded-4 shadow" name="image">
               </div>
               <div class="mb-3  d-flex justify-content-center">
-              <button type="submit" class="btn btn-warning px-3  border-2 rounded-4 shadow fw-semibold  ">Ajouter</button>
+              <button type="submit" class="btn btn-warning px-3  border-2 rounded-4 shadow fw-semibold ">Ajouter</button>
             </div>
         </div>
         </form>
