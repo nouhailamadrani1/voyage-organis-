@@ -19,8 +19,25 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->save();
 
-        return redirect()->route('profile.show')->with('success', 'User updated successfully.');
+        if (request()->hasFile('image')) {
+            $image = request()->file('image');
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $postImage);
+
+            $user['image'] = "$postImage"; }
+           $user->save();
+
+        return redirect()->back()->with('success', 'User updated successfully.');
+   
+    }
+
+    
+    public function delete(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('/')->with('success', 'Profile deleted successfully.');
     }
 }

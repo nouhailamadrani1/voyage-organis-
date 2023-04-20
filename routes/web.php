@@ -60,8 +60,8 @@
     Route::get('/voyageOrganise',[VoyageController::class ,'showHome'])->name('voyageOrganise');
     Route::resource('reservation', ReservationController::class);
     Route::get('/indexHome',[HotelController::class ,'indexHome'])->name('indexHome');
-    Route::resource('profile', UserController::class);
-    
+    // patsh::resource('profile', UserController::class);
+    // Route::post('/profile/update', 'App\Http\Controllers\UserController@update')->name('profile.update');
     // Route::get('password/reset', ForgotPasswordController::class,'howLinkRequestForm')->name('password.request');
 
     // Route::post('password/email', ForgotPasswordController::class ,'sendResetLinkEmail')->name('password.email');
@@ -70,3 +70,7 @@
     
     // Route::post('password/reset', ResetPasswordController::class ,'reset')->name('password.update');
     Route::get('/forgot-password', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm');
+    Route::prefix('profile')->group(function () {
+        Route::put('/{id}', [UserController::class, 'update'])->name('profile.update');
+        Route::delete('/{id}', [UserController::class, 'delete'])->name('profile.delete');
+    });

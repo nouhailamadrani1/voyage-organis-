@@ -36,26 +36,41 @@
         <div class="d-flex justify-content-between m-1 "> 
             <h5 class="my-2 fw-semibold">Profile</h5>
                 <img  src="images/{{Auth::user()->image}} " style="width: 50px"></div>
-        <form>
-          <div>  <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label fw-semibold "> Nom</label>
-            <input type="text" class="form-control border-0 border-2 border-bottom border-warning" value="{{Auth::user()->name}}">
-          </div>
-        
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label fw-semibold">Email address</label>
-          <input type="email" class="form-control border-0 border-2 border-bottom border-warning" id="exampleInputEmail1"  value="{{Auth::user()->email}}" aria-describedby="emailHelp">
-        </div></div>
-        <div class="mx-4"><input type="file"  name="image" class="d-none" id="actual-btn"/>
+                <form  action="{{ route('profile.update', ['id' => Auth::user()->id]) }}" method="POST" enctype="multipart/form-data">
+                  @csrf
+                  @method('PUT')
+                    <div class="mb-3">
+                      <label for="name" class="form-label fw-semibold">Name</label>
+                      <input type="text" class="form-control border  border-2 border-warning " name="name" id="name" value="{{ old('name', Auth::user()->name) }}">
+                      @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label fw-semibold">Email address</label>
+                      <input type="email" class="form-control border  border-2 border-warning " name="email" id="email" value="{{ old('email', Auth::user()->email) }}">
+                      @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                    </div>
+                    <div class="mb-3">
+                      <label for="image" class="form-label fw-semibold">Changer profile</label>
+                      <input type="file" class="form-control border  border-2 border-warning " name="image" id="image">
+                      @error('image')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                    </div>
+                    <button type="submit" class="btn btn-warning">Update Profile</button>
 
-            <label for="actual-btn"   class=" rounded-circle p-2 border border-warning border-2   " >
-                <img  src="https://img.icons8.com/ios/50/ffc107/compact-camera.png"/></label></div>
+                  </form>
+                  <form class="d-flex justify-content-end" action="{{ route('profile.delete', ['id' => Auth::user()->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger text-white " type="submit">Supprimer profile</button>
+                </form>
                   
-          <div class=" d-flex justify-content-end">  <button type="submit" class="btn btn-warning mx-1">Update Profile</button>
-            <button type="submit" class="btn btn-danger mx-1">Supprimer Profile</button></div>
-
-          </form>
-        <a  href="{{ route('password.request') }}">reset</a>
+        
+        <a  href="{{ route('password.request') }}" class="text-decoration-none text-danger  border-0 border-2 border-bottom border-warning " style="width: 130px">Reset Password</a>
 
     </div>
 
