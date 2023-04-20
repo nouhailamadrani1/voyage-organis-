@@ -47,14 +47,14 @@
                       @method('DELETE')
                       <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/f11010/delete-forever.png"/></button>
                   </form>
-                  <form class=""  method="post">
+                  <form class="" >
                     @csrf
                     @method('DELETE')
                     <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/41ef1f/vision.png"/></button>
                 </form>
-                <form class="" action="" method="post">
+                <form  action="{{ route('transports.edit', $transport->id)}}" method="get">
                   @csrf
-                  @method('DELETE')
+                
                   <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/007bff/edit-row.png"/></button>
               </form>
                     </td>

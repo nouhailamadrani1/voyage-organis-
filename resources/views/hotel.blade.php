@@ -50,9 +50,9 @@
                   @method('DELETE')
                   <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/41ef1f/vision.png"/></button>
               </form>
-              <form class="" action="{{ route('hotel.destroy', $hotel->id)}}" method="post">
+              <form class="" action="{{ route('hotel.edit', $hotel->id)}}" method="get">
                 @csrf
-                @method('DELETE')
+               
                 <button class=" btn btn" type="submit"> <img src="https://img.icons8.com/ios-glyphs/20/007bff/edit-row.png"/></button>
             </form>
                         

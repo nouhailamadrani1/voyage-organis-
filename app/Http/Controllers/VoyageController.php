@@ -63,11 +63,23 @@ class VoyageController extends Controller
         return view('voyageDashboard', compact('voyageOrganise'));
     }
 
-    public function update(Request $request, Voyage $voyage)
+    public function update(Request $request, $id)
     {
-     
-
+        $voyage = Voyage::find($id);
+        $voyage->fill($request->all());
+    
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $postImage);
+            $voyage->image = $postImage;
+        }
+    
+        $voyage->save();
+    
+        return redirect()->back();
     }
+    
     public function showHome()
     {
         $voyages = Voyage::all();

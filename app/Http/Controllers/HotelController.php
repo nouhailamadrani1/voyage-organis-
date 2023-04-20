@@ -62,31 +62,43 @@ class HotelController extends Controller
     {
         return view('hotel.show', compact('hotel'));
     }
+   
 
     public function edit(Hotel $hotel)
     {
-        return view('hotel.edit', compact('hotel'));
+        return view('EditHotel', compact('hotel'));
     }
 
-    public function update(Request $request, Hotel $hotel)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
 
             'nom' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'sometimes|nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'ville' => 'required',
             'pays' => 'required',
-            'prix' => 'required|float',
+            'prix' => 'required',
             'description' => 'required',
             'nbre_etoiles' => 'required|integer'
         ]);
-        if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
-            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $postImage);
-            $hotel['image'] = "$postImage";
+                // Find the hotel by its ID
+            $hotel = Hotel::findOrFail($id);
 
-        }
+            // Update the hotel properties with the new input data
+            $hotel->nom = $validatedData['nom'];
+            $hotel->ville = $validatedData['ville'];
+            $hotel->pays = $validatedData['pays'];
+            $hotel->nbre_etoiles = $validatedData['nbre_etoiles'];
+            $hotel->prix = $validatedData['prix'];
+            $hotel->description = $validatedData['description'];
+
+                if ($image = $request->file('image')) {
+                    $destinationPath = 'images/';
+                    $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                    $image->move($destinationPath, $postImage);
+                    $hotel['image'] = "$postImage";
+                }
+
         $hotel->fill($validatedData);
         $hotel->save();
 

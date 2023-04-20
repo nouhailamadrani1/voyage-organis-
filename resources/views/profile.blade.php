@@ -54,8 +54,11 @@
                       @enderror
                     </div>
                     <div class="mb-3">
-                      <label for="image" class="form-label fw-semibold">Changer profile</label>
-                      <input type="file" class="form-control border  border-2 border-warning " name="image" id="image">
+                      <input type="file"  class="d-none" id="actual-btn" class="form-control border  border-2 border-warning " name="image" id="image">
+                     <label for="actual-btn"   class=" rounded-circle p-2 border border-warning border-2   " >
+                    <img src="https://img.icons8.com/ios/50/ffc107/compact-camera.png"/></label><SPan class="text-warning mx-2">Changer profile</SPan>
+                    
+                     
                       @error('image')
                         <span class="text-danger">{{ $message }}</span>
                       @enderror

@@ -10,14 +10,14 @@ class TransportController extends Controller
     public function index(Request $request)
     {
 
-         $searchTerm = $request->input('search');
+        $searchTerm = $request->input('search');
         $query = Transport::query();
 
         if (!empty($searchTerm)) {
-            $query->where('nom', 'like', '%'.$searchTerm.'%');
+            $query->where('nom', 'like', '%' . $searchTerm . '%');
         }
-         $transports = $query->get();
-        
+        $transports = $query->get();
+
 
         return view('transport', [
 
@@ -34,17 +34,11 @@ class TransportController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nom' => 'required',
-            'depuis'  => 'required',
-            'pour'  => 'required',
-            'date_de_départ'  => 'required',
-            'date_arrivee'  => 'required|after_or_equal:date_de_départ',
-            'heure_de_départ'  => 'required',
-            'heure_arrivee'  => 'required ',
-            'nombre_passagers'  => 'required',
-            'prix'  => 'required',
+            'nom' => 'required|max:255',
+            'nombre_passagers' => 'required|numeric',
+            'prix' => 'required|numeric',
             'description' => 'required',
-            'image'=>'required'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         $transport = new Transport();
@@ -54,7 +48,6 @@ class TransportController extends Controller
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $postImage);
             $transport['image'] = "$postImage";
-
         }
 
         $transport->save();
@@ -64,36 +57,32 @@ class TransportController extends Controller
 
     public function show(Transport $Transport)
     {
-        return view('transport', compact('transports.index'));
+        return view('EditTransport', compact('transport'));
     }
 
-    public function edit(Transport $Transport)
+    public function edit(Transport $transport)
     {
-        return view('transport', compact('transports.index'));
+        return view('EditTransport', compact('transport'));
     }
 
-    public function update(Request $request, Transport $Transport)
+    public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'nom' => 'required',
-            'nombre_passagers'  => 'required',
-            'prix'  => 'required',
-            'image'=>'required'
-        ]);
-
-        $Transport->fill($validatedData);
+        $transport = Transport::find($id);
+        $transport->fill($request->all());
+    
         if ($image = $request->file('image')) {
             $destinationPath = 'images/';
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $postImage);
-            $Transport['image'] = "$postImage";
-
+            $transport->image = $postImage;
         }
-        $Transport->save();
-
-        return redirect()->route('transports');
+    
+        $transport->save();
+    
+        return redirect()->route('transports.index');
     }
-
+    
+      
     public function destroy(Transport $Transport)
     {
         $Transport->delete();
