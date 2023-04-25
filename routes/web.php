@@ -33,15 +33,16 @@
     // Route::get('/ticket', function () {
     //     return view('ticket');
     // });
-    Route::get('/hotelHome', function () {
-        return view('hotelHome');
-    });
+    // Route::get('/showReservationUser', function () {
+    //     return view('showReservationUser');
+    // });
 
     Route::get('/profileUser', function () {
         return view('profile');
     });
-         
+      
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/showReservation/{id}', [ReservationController::class, 'getUserReservations'])->name('showReservation');
 
     Route::resource('articles', ArticleController::class)->middleware('auth');
     Route::resource('comments', CommentController::class)->middleware('auth');
@@ -50,7 +51,7 @@
     Route::resource('transports', TransportController::class)->middleware('auth');
     Route::resource('blogDashboard', ArticleAdminController::class)->middleware('auth');
   
-    Route::get('/dashboard',[StatistiquesController::class ,'count'])->middleware('auth');
+    Route::get('/dashboard',[StatistiquesController::class ,'count'])->middleware('auth','role');
 
     Route::get('/hotels',[HotelController::class ,'indexClient'])->name('hotels');
 
@@ -58,6 +59,7 @@
     Route::resource('voyageDashboard', VoyageController::class);
     Route::get('/voyageOrganise',[VoyageController::class ,'showHome'])->name('voyageOrganise')->middleware('auth');
     Route::resource('reservation', ReservationController::class);
+    Route::get('getCount',[ ReservationController::class ,'getCount'])->name('getCount');
     Route::get('/indexHome',[HotelController::class ,'indexHome'])->name('indexHome')->middleware('auth');
    
         Route::get('/forgot-password', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->middleware('auth');

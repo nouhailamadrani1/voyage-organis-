@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class TransportController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth']);
+        $this->middleware(['role'])->only([
+            'update',
+            'delete',
+            'create',
+        ]);
+    }
     public function index(Request $request)
     {
 
@@ -51,6 +59,7 @@ class TransportController extends Controller
         }
 
         $transport->save();
+        session()->flash('alert', 'Transport enregistrée avec succès');
 
         return redirect()->route('voyageDashboard.index');
     }
@@ -78,7 +87,7 @@ class TransportController extends Controller
         }
     
         $transport->save();
-    
+        session()->flash('alert', 'Mise à jour de l Transport avec succes');
         return redirect()->route('transports.index');
     }
     
@@ -86,6 +95,7 @@ class TransportController extends Controller
     public function destroy(Transport $Transport)
     {
         $Transport->delete();
+        session()->flash('alert', 'Supprimer transport avec succes');
         return redirect()->route('transports.index');
     }
     public function indexClient()

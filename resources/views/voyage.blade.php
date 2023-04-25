@@ -213,6 +213,7 @@
     </div> <h5> Prix Total : <span  class="text-danger p-2">{{$voyage->hotel->prix + $voyage->transport->prix + $voyage->prix}} </span> DH </h5></div>
     <input type="hidden" class="form-control " name="prix_totale" value="{{$voyage->hotel->prix + $voyage->transport->prix + $voyage->prix}}" >
 
+ 
     <button type="submit" class="btn btn-warning mt-4  d-flex align-items-center">réserve</button>
 
    

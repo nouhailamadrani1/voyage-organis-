@@ -8,7 +8,17 @@ use App\Models\Transport;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
+
 {
+
+    public function __construct() {
+        $this->middleware(['auth']);
+        $this->middleware(['role'])->only([
+            'update',
+            'delete',
+            'create',
+        ]);
+    }
     public function index(Request $request)
     {
         $searchTerm = $request->input('search');
@@ -102,7 +112,7 @@ class HotelController extends Controller
 
         $hotel->fill($validatedData);
         $hotel->save();
-        session()->flash('alert', 'Hotel enregistrée avec succès');
+        session()->flash('alert', 'Mise à jour de l hôtel avec succes');
 
         return redirect()->route('hotel.index');
     }

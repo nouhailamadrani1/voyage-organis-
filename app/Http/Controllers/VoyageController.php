@@ -10,6 +10,15 @@ use Illuminate\Http\Request;
 
 class VoyageController extends Controller
 {
+    
+    public function __construct() {
+        $this->middleware(['auth']);
+        $this->middleware(['role'])->only([
+            'update',
+            'delete',
+            'create',
+        ]);
+    }
     public function index()
     {
         $voyages = Voyage::all();
@@ -54,7 +63,7 @@ class VoyageController extends Controller
         }
 
         $voyage->save();
-
+        session()->flash('alert', ' Voyage enregistre avec succes');
         return redirect()->route('voyageDashboard.index')->with('success', 'Voyage organisé ajouté avec succès.');
     }
 
@@ -76,7 +85,7 @@ class VoyageController extends Controller
         }
     
         $voyage->save();
-    
+        session()->flash('alert', ' mise a jour voyage  avec succes');
         return redirect()->back();
     }
     
@@ -88,16 +97,13 @@ class VoyageController extends Controller
         
         return view('voyage', compact('voyages','transports','hotels'));
     }
-    // public function destroy(Voyage $voyage ,$id)
-    // {
-    //     $voyage->delete($id);
-    //     return redirect()->route('voyageDashboard.index');
-    // }
+    
 
     public function destroy($id)
 {
     $voyage = Voyage::findOrFail($id);
     $voyage->delete();
+    session()->flash('alert', ' Voyage supprimer avec succes');
     return redirect()->route('voyageDashboard.index');
 }
 

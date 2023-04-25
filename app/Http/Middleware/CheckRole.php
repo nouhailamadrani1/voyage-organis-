@@ -18,11 +18,11 @@ class CheckRole
     public function handle(Request $request, Closure $next)
     {
         // 2 -> admin
-        
+
         if (Auth::user()->role == 2) {
             return $next($request);
         }
-         return redirect('home');
+         return redirect('indexHome');
        
     }
 }
