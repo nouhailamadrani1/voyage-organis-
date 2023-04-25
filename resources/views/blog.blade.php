@@ -73,7 +73,11 @@
     <img src="img/coverblog.png"/>
 </div>
     </div>
-  
+    @if (session()->has('alert'))
+   <div class="alert alert-success" role="alert">
+        {{ session('alert') }}
+    </div>
+@endif
     <div class="mt-5">
 
         <div class=" my-5   d-flex justify-content-center flex-wrap ">
@@ -95,10 +99,10 @@
 @endif
 
                 <div class=" px-4 ">
-                    <h5>{{ $article->title }}</h5>
-                    <p>{{ $article->description }}</p>
+                    <h6>{{ $article->title }}</h6>
+                    <p style="font-size : 14px" >{{ $article->description }}</p>
                     <div class=" d-flex justify-content-center">
-                        <img src="images/{{ ($article->image) }}" class="rounded " alt="" style="width: 250px ;hight: auto">
+                        <img src="images/{{ ($article->image) }}" class="rounded " alt="" style="width: 250px ;hight: auto"><span></span>
                     </div>
                     <hr class="">
 
@@ -123,15 +127,16 @@
 
 
                 </div>
+               
 
-                <div>
-                    <h6 class="m-1 p-1">Les Commentaire</h6>
+                <div style="height: 200px; overflow: auto;">
+                    <p class="m-1 p-1">Les Commentaire ({{$article->comments->count()}})</p>
                     @foreach ($article->comments as $comment)
                     <div class="   px-2 m-2 p-2 border border-2 border-primary  rounded ">
                         <div class="col-12"> <img src="images/{{ $comment->user->image }}" class="rounded-circle px-1 " alt="" style="width: 30px ; hight: 30px"><span class="fst-italic"><b>{{ $comment->user->name }}</b></span><span>
-                                <p>{{ $comment->description }}</p>
+                                <p style="font-size : 12px">{{ $comment->description }}</p>
                             </span></div>
-                            @if (Auth::user()->role == 2 || Auth::user()->id == $article->user->id)
+                            @if (Auth::user()->role == 2 || Auth::user()->id == $comment->user->id)
 
                         <form class="d-flex justify-content-end align-items-center px-5 " action="{{ route('comments.destroy', $comment->id)}}" method="post">
                             @csrf

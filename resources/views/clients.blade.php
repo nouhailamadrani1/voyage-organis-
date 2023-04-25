@@ -5,6 +5,11 @@
     <div class="d-flex justify-content-center px-3 " >
         <h5>Bienvenue  <b  class="text-danger">Nouhaila</b> sur votre Dashboard !!</h5>
         </div>
+        @if (session()->has('alert'))
+            <div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700">
+                {{ session('alert') }}
+            </div>
+        @endif
        <div class="d-flex justify-content-center flex-wrap">
         <div class=" p-1 m-3 bg-dangerbg-opacity-10   border border-danger border-2 rounded-4 shadow  " >
          

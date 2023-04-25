@@ -33,6 +33,11 @@
 
   <div class="mt-5">
     <div class="m-5 card border border-2 border-warning p-3">
+      @if (session()->has('alert'))
+            <div class=" mx-5 alert alert-success" role="alert">
+                {{ session('alert') }}
+            </div>
+        @endif
         <div class="d-flex justify-content-between m-1 "> 
             <h5 class="my-2 fw-semibold">Profile</h5>
                 <img  src="images/{{Auth::user()->image}} " style="width: 50px"></div>

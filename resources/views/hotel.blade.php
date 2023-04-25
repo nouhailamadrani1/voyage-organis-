@@ -5,6 +5,11 @@
     <div class="d-flex justify-content-center px-3 mt-5  " >
         <h5 class="mt-5" >Bienvenue  <b style="color:rgb(13, 111, 229);">{{Auth::user()->name}}</b> sur votre Dashboard !!</h5>
         </div>
+        @if (session()->has('alert'))
+            <div class=" mx-5 alert alert-success" role="alert">
+                {{ session('alert') }}
+            </div>
+        @endif
        <div class="d-flex justify-content-center p-4 flex-wrap flex-lg-nowrap">
         <div class=" p-1 m-3 bg-primary bg-opacity-10   border border-primary border-2 rounded-4 shadow shadow-primary " >
          

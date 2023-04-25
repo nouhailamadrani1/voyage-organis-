@@ -2,9 +2,15 @@
 
 @section('content')
 <div class="m-0 p-0">
+  
     <div class="d-flex justify-content-center px-3 mt-5 " >
         <h5 class="mt-5">Bienvenue  <b  class="text-danger">{{Auth::user()->name}}</b> sur votre Dashboard !!</h5>
         </div>
+        @if (session()->has('alert'))
+            <div class=" mx-5 alert alert-success" role="alert">
+                {{ session('alert') }}
+            </div>
+        @endif
        <div class="d-flex justify-content-center  p-4 flex-wrap flex-lg-nowrap">
         <div class=" p-1 m-3 bg-dangerbg-opacity-10   border border-danger border-2 rounded-4 shadow  " >
          

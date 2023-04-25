@@ -97,7 +97,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body d-flex justify-content-between flex-wrap   " style="background: #00235B" >
-          
+            @if (session()->has('alert'))
+            <div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700">
+                {{ session('alert') }}
+            </div>
+        @endif
             <div class="m-0 d-flex justify-content-center flex-wrap w-100  "> 
       <div class="d-flex justify-content-center flex-wrap border-2 border my-2 border-warning  w-75 shadow bg-white " id="aboutvoyage" >
        
@@ -169,17 +173,17 @@
       <label for="exampleFormControlInput1" class="form-label fw-semibold">Pays</label>
       <input type="text" class="form-control " name="pays" value="{{$voyage->pays}}" >
     </div>
-    <div  class="d-flex justify-content-evenly">
+    <div  class="d-flex justify-content-between">
       <div class="mb-3 mx-1">
           <label for="exampleFormControlInput1" class="form-label fw-semibold">De puis</label>
-          <input type="text" class="form-control " name="depuis" value="{{$voyage->depuis}}"  >
+          <input type="text" class="form-control  " name="depuis" value="{{$voyage->depuis}}"  >
         </div>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label fw-semibold">Pour</label>
           <input type="text" class="form-control " name="pour" value=" {{$voyage->pour}}" >
         </div>
      </div>
-    <div  class="d-flex justify-content-evenly">
+    <div  class="d-flex justify-content-between">
       <div class="mb-3 mx-1">
           <label for="exampleFormControlInput1" class="form-label fw-semibold">Date de départ</label>
           <input type="date" class="form-control " name="date_de_départ" value="{{$voyage->date_de_départ}}" >
@@ -189,7 +193,7 @@
           <input type="date" class="form-control " name="date_arrivee" value="{{$voyage->date_arrivee}}" >
         </div>
      </div>
-     <div  class="d-flex justify-content-evenly">
+     <div  class="d-flex justify-content-between">
       <div class="mb-3 mx-1">
           <label for="exampleFormControlInput1" class="form-label fw-semibold">Heure de départ</label>
           <input type="time" class="form-control " name="heure_de_départ" value="{{$voyage->heure_de_départ}}" >

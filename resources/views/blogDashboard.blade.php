@@ -5,6 +5,11 @@
     <div class="d-flex justify-content-center mt-5 m-1 px-3 " >
         <h5 class="mt-4">Bienvenue  <b  class="text-warning">{{Auth::user()->name}}</b> sur votre Dashboard !!</h5>
         </div>
+        @if (session()->has('alert'))
+        <div class=" mx-5 alert alert-success" role="alert">
+            {{ session('alert') }}
+        </div>
+    @endif
        <div class="d-flex justify-content-center p-4 flex-wrap flex-lg-nowrap">
         <div class=" p-1 m-3 bg-warning bg-opacity-10   border border-warning border-2 rounded-4 shadow  " >
          

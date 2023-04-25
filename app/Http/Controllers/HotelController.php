@@ -38,7 +38,7 @@ class HotelController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'ville' => 'required',
             'pays' => 'required',
-            'prix' => 'required|float',
+            'prix' => 'required',
             'description' => 'required',
             'nbre_etoiles' => 'required|integer'
         ]);
@@ -54,6 +54,7 @@ class HotelController extends Controller
         }
 
         $hotel->save();
+        session()->flash('alert', 'Hotel enregistrée avec succès');
 
         return redirect()->route('hotel.index');
     }
@@ -101,6 +102,7 @@ class HotelController extends Controller
 
         $hotel->fill($validatedData);
         $hotel->save();
+        session()->flash('alert', 'Hotel enregistrée avec succès');
 
         return redirect()->route('hotel.index');
     }
@@ -108,6 +110,8 @@ class HotelController extends Controller
     public function destroy(Hotel $hotel)
     {
         $hotel->delete();
+        session()->flash('alert', 'Hotel supprimer avec succès');
+
         return redirect()->route('hotel.index');
     }
     public function indexClient()

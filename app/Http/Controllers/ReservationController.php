@@ -35,6 +35,8 @@ class ReservationController extends Controller
         ]);
 
         $reservation->save();
+        session()->flash('alert', 'réservation enregistrée avec succès');
+
 
         return view('ticket', compact('reservation'));
     }

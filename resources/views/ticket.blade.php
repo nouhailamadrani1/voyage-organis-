@@ -12,11 +12,17 @@
 	<div class="container d-flex  justify-content-center ">
 		<div class="card bg-light  col-md-8">
 			<div class="card-body  ">
+                @if (session()->has('alert'))
+                
+                <div class="alert alert-success" role="alert">
+                {{ session('alert') }}
+            </div>
+        @endif
 	<div class="d-flex  justify-content-between">			
         <img src="logo.png" alt="" style="width: 50px ; hight: 50px ; ">
         <h6 class="text-danger">Ticket :Voyage a {{$reservation->pour}}</h6>
     </div>
-				<div class="row d-flex  justify-content-center">
+				<div class="row d-flex  justify-content-center " style="font-size: 15px">
 					<div class="col-md-4">
 						<p class="font-weight-bold">Nom:</p>
 						
@@ -42,7 +48,7 @@
 						<p>{{ $reservation->date_arrivee }}</p>
 						<p>{{ $reservation->heure_de_départ }}</p>
 						<p>{{ $reservation->heure_arrivee }}</p>
-						<p>{{ $reservation->prix_totale }} Dh</p>
+						<p class="text-danger">{{ $reservation->prix_totale }} DH</p>
 					</div>
 				</div>
 				<div class="text-center ">
