@@ -211,6 +211,8 @@
 
     <button type="submit" class="btn btn-warning mt-4  d-flex align-items-center">réserve</button>
 
+   
+
     </form>
      </div>
   {{--  --}}

@@ -24,12 +24,15 @@
     Route::get('/', function () {
         return view('welcome');
     });
+    // Route::get('/', [HomeController::class, 'indexWelcome']);
 
     Auth::routes();
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     
-
+    // Route::get('/ticket', function () {
+    //     return view('ticket');
+    // });
     Route::get('/hotelHome', function () {
         return view('hotelHome');
     });

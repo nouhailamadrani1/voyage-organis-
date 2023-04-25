@@ -36,7 +36,7 @@ class ReservationController extends Controller
 
         $reservation->save();
 
-        return redirect()->back()->with('success', 'Reservation added successfully!');
+        return view('ticket', compact('reservation'));
     }
     
 }
