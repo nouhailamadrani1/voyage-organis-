@@ -85,12 +85,14 @@
                         {{ $article->created_at->diffForHumans() }}
                     </p>
                 </div>
+                
+ @if (Auth::user()->role == 2 || Auth::user()->id == $article->user->id)
                 <form class="d-flex justify-content-end align-items-center px-4" action="{{ route('articles.destroy', $article->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button class=" btn btn-white border-bottom border-0 border-primary border-3" type="submit">Supprimer</button>
                 </form>
-
+@endif
 
                 <div class=" px-4 ">
                     <h5>{{ $article->title }}</h5>
@@ -129,13 +131,14 @@
                         <div class="col-12"> <img src="images/{{ $comment->user->image }}" class="rounded-circle px-1 " alt="" style="width: 30px ; hight: 30px"><span class="fst-italic"><b>{{ $comment->user->name }}</b></span><span>
                                 <p>{{ $comment->description }}</p>
                             </span></div>
-
+                            @if (Auth::user()->role == 2 || Auth::user()->id == $article->user->id)
 
                         <form class="d-flex justify-content-end align-items-center px-5 " action="{{ route('comments.destroy', $comment->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class=" btn btn-white border-bottom border-0 border-primary border-3" type="submit">Supprimer</button>
                         </form>
+                        @endif
                     </div>
 
                     @endforeach

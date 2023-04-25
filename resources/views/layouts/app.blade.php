@@ -48,7 +48,9 @@
                             @endif
                         @else
                         <li class="align-items-center d-flex justify-content-end">
-                            <a class="mx-1 text-decoration-none fw-semibold text-dark"> About</a>
+                            @if (Auth::user()->role == 2)
+                            <a class="mx-1 text-decoration-none fw-semibold text-dark" href="/dashboard">Dashboard</a>
+                            @endif
                             <a class="mx-2 text-decoration-none fw-semibold text-dark" href="#contact2">Contact</a>
                         </li>
                             <li class=" "> 
