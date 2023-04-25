@@ -49,32 +49,33 @@
                         @else
                         <li class="align-items-center d-flex justify-content-end">
                             @if (Auth::user()->role == 2)
-                            <a class="mx-1 text-decoration-none fw-semibold text-dark" href="/dashboard">Dashboard</a>
+                            <a class="mx-1 text-decoration-none fw-semibold text-dark btn btn-danger text-white" href="/dashboard">Dashboard</a>
                             @endif
                             <a class="mx-2 text-decoration-none fw-semibold text-dark" href="#contact2">Contact</a>
                         </li>
                             <li class=" "> 
                                 <a   >
-                                    <img src="https://img.icons8.com/ios/50/null/search--v1.png" class="rounded  p-2 mx-2 " style="width: 40px ; hight: 40px ; " />
+                                    <img src="https://img.icons8.com/ios/50/null/search--v1.png" class="rounded  p-2  " style="width: 40px ; hight: 40px ; " />
                                 </a>
                             <a  >
                                 <img src="https://img.icons8.com/ios/50/null/appointment-reminders--v1.png" class="rounded bg-body-tertiary p-2 mx-2 " style="width: 40px ; hight: 40px"/>
+                                {{-- <span class="badge bg-danger rounded-pill" style="margin-left: 2px">14</span> --}}
                             </a>
                          <a  href="/profileUser" >  
-                             <img src="images/{{Auth::user()->image}} " class="rounded mx-2 " alt="" style="width: 40px ; hight: 40px">
+                             <img src="images/{{Auth::user()->image}} " class="rounded mx-2  " alt="" style="width: 40px ; hight: 40px">
                          </a>
                             </li>
 
-                                <div class="dropdown-menu dropdown-menu-end  text-dark " aria-labelledby="navbarDropdown">
-                                    <a class="text-decoration-none px-3 text-dark " href="{{ route('logout') }}"
+                                {{-- <div class="dropdown-menu dropdown-menu-end  text-dark " aria-labelledby="navbarDropdown"> --}}
+                                    <a class="text-decoration-none text-dark " href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><img src="https://img.icons8.com/ios-filled/20/0000/logout-rounded-left.png"/>
-                                        {{ __('Logout') }}
+                                                     document.getElementById('logout-form').submit();"><img src="https://img.icons8.com/ios-filled/50/null/logout-rounded-left.png" class="rounded  p-2 mx-2 " style="width: 35px ; hight: 35px"/>
+                                        {{-- {{ __('Logout') }} --}}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
+                                {{-- </div> --}}
                             </li>
                         @endguest
                     </ul>
